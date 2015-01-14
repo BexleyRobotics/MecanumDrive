@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team4753.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team4753.robot.subsystems.WheelArm;
 
 
 /**
@@ -20,7 +21,7 @@ public class Robot extends IterativeRobot {
 
 	public static OI oi;
 	public static DriveTrain drivetrain;
-
+	public static WheelArm arms;
     Command autonomousCommand;
 
     /**

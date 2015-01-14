@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 /**
  *
  */
-public class Extractor extends Subsystem {
+public class Ejector extends Subsystem {
     
     // Put methods for controlling this subsystem
     // here. Call these from Commands.

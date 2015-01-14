@@ -32,6 +32,7 @@ public class Robot extends IterativeRobot {
 		oi = new OI();
         // instantiate the command used for the autonomous period
         drivetrain = new DriveTrain();
+        arms = new WheelArm();
     }
 	
 	public void disabledPeriodic() {

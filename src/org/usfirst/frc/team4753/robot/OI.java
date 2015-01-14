@@ -1,7 +1,10 @@
 package org.usfirst.frc.team4753.robot;
 
+import org.usfirst.frc.team4753.robot.commands.*;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -15,8 +18,9 @@ public class OI {
     // Joystick stick = new Joystick(port);
     // Button button = new JoystickButton(stick, buttonNumber);
 	
-	private Joystick stick = new Joystick(0);
-    
+	private Joystick stick = new Joystick(1);
+	private Button button1 = new JoystickButton(stick, 1);
+	private Button button2 = new JoystickButton(stick, 2);
     // There are a few additional built in buttons you can use. Additionally,
     // by subclassing Button you can create custom triggers and bind those to
     // commands the same as any other Button.
@@ -38,7 +42,8 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
-	
+	button1.whileHeld(new In());
+	button2.whileHeld(new Out());
 	}
 	
 	public Joystick getJoy(){

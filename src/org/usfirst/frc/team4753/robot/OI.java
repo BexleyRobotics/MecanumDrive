@@ -42,8 +42,8 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
-	button1.whileHeld(new In());
-	button2.whileHeld(new Out());
+	button1.whileHeld(new PullToteIn());
+	button2.whileHeld(new PushToteOut());
 	}
 	
 	public Joystick getJoy(){

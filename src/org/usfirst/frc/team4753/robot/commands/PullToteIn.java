@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc.team4753.robot.Robot;
 
-public class In extends Command
+public class PullToteIn extends Command
 {
 	@Override
 	protected void initialize()

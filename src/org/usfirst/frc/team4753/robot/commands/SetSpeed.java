@@ -13,6 +13,13 @@ public class SetSpeed extends Command {
 
 	private Joystick stick;
 	
+	/**
+	 * SetSpeed uses the Z axis of the joystick (throttle on ours)
+	 * to tell the motors what percentage of power they are to use, 
+	 * down to 5% power
+	 * requires drivetrain, joystick
+	 * @param joy
+	 */
     public SetSpeed(Joystick joy) 
     {
     	

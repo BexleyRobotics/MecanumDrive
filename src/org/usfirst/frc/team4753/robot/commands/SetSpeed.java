@@ -46,7 +46,7 @@ public class SetSpeed extends Command {
     		setSpeed = -0.9;
     	}
     	setSpeed = (.5 + (setSpeed / 2));
-    	DriveTrain.setMaxOutput(setSpeed);
+    	Robot.drivetrain.setMaxOutput(setSpeed);
     }
 
     // Make this return true when this Command no longer needs to run execute()

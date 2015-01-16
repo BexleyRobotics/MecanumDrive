@@ -36,7 +36,7 @@ public class OI {
     // button.whenPressed(new ExampleCommand());
 		
 		Button x = new JoystickButton(stick, 3);
-		x.whenPressed(new SetSpeed());
+		x.whenPressed(new SetSpeed(stick));
     
     // Run the command while the button is being held down and interrupt it once
     // the button is released.

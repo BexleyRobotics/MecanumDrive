@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class SetSpeed extends Command {
 
 	private Joystick stick;
+	private boolean finished = false;
 	
 	/**
 	 * SetSpeed uses the Z axis of the joystick (throttle on ours)
@@ -40,22 +41,24 @@ public class SetSpeed extends Command {
     protected void execute() 
     {
     	double setSpeed;
-    	setSpeed = stick.getZ();
+    	setSpeed = -stick.getZ();
     	if(setSpeed < -0.9)
     	{
     		setSpeed = -0.9;
     	}
     	setSpeed = (.5 + (setSpeed / 2));
     	Robot.drivetrain.setMaxOutput(setSpeed);
+    	finished = true;
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return finished;
     }
 
     // Called once after isFinished returns true
     protected void end() {
+    	finished = false;
     }
 
     // Called when another command which requires one or more of the same

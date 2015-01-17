@@ -18,9 +18,9 @@ public class OI {
     // Joystick stick = new Joystick(port);
     // Button button = new JoystickButton(stick, buttonNumber);
 	
-	private Joystick stick = new Joystick(1);
-	private Button button1 = new JoystickButton(stick, 1);
-	private Button button2 = new JoystickButton(stick, 2);
+	private Joystick stick = new Joystick(0);
+	private Button button1 = new JoystickButton(stick, 2);
+	private Button button2 = new JoystickButton(stick, 3);
     // There are a few additional built in buttons you can use. Additionally,
     // by subclassing Button you can create custom triggers and bind those to
     // commands the same as any other Button.
@@ -35,7 +35,7 @@ public class OI {
     // until it is finished as determined by it's isFinished method.
     // button.whenPressed(new ExampleCommand());
 		
-		Button x = new JoystickButton(stick, 3);
+		Button x = new JoystickButton(stick, 1);
 		x.whenPressed(new SetSpeed(stick));
     
     // Run the command while the button is being held down and interrupt it once
@@ -51,6 +51,14 @@ public class OI {
 	
 	public Joystick getJoy(){
 		return stick;
+	}
+	
+	public double getY(){
+		return stick.getY();
+	}
+	
+	public double getX(){
+		return stick.getX();
 	}
 }
 

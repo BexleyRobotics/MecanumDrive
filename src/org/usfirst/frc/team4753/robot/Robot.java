@@ -29,10 +29,11 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-		oi = new OI();
+		
         // instantiate the command used for the autonomous period
         drivetrain = new DriveTrain();
         arms = new WheelArm();
+        oi = new OI();
     }
 	
 	public void disabledPeriodic() {
@@ -72,6 +73,8 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        this.drivetrain.drive(oi.getY(), oi.getX());
+        
     }
     
     /**

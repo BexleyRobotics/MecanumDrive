@@ -48,7 +48,10 @@ public class DriveTrain extends Subsystem {
 	public void drive(double y, double x) {// sets a distance to travel y and
 											// and an extent to curve x
 
-		drive.drive(y, -x);
+		double left, right;
+		left = y + x;
+		right = y - x;
+		drive.setLeftRightMotorOutputs(left, right);
 
 	}
 }

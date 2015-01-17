@@ -18,7 +18,7 @@ public class WheelArm extends Subsystem {
 	public WheelArm() {
 		L = new Victor(7);
 		M = new Victor(8);
-		R = new Victor(9);
+		R = new Victor(1);
 	}
 	
     public void initDefaultCommand() {

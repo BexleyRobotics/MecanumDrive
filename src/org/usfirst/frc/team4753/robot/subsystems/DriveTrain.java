@@ -23,7 +23,8 @@ public class DriveTrain extends Subsystem {
 	 * 
 	 */
 	public DriveTrain() {
-		drive = new RobotDrive(RobotMap.LEFT_MOTOR, RobotMap.RIGHT_MOTOR);
+		drive = new RobotDrive(RobotMap.LEFT_DRIVE_MOTOR,
+				RobotMap.RIGHT_DRIVE_MOTOR);
 
 	}
 

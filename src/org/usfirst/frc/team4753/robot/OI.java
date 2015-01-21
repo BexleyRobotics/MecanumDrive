@@ -21,6 +21,7 @@ public class OI {
 	private Joystick stick = new Joystick(0);
 	private Button button1 = new JoystickButton(stick, 2);
 	private Button button2 = new JoystickButton(stick, 3);
+	private Button button6 = new JoystickButton(stick, 6);
     // There are a few additional built in buttons you can use. Additionally,
     // by subclassing Button you can create custom triggers and bind those to
     // commands the same as any other Button.
@@ -47,6 +48,8 @@ public class OI {
     // button.whenReleased(new ExampleCommand());
 	button1.whileHeld(new PullToteIn());
 	button2.whileHeld(new PushToteOut());
+	button6.whileHeld(new ToggleEjector());
+	
 	}
 	
 	public Joystick getJoy(){

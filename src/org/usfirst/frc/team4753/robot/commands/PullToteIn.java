@@ -4,36 +4,30 @@ import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc.team4753.robot.Robot;
 
-public class PullToteIn extends Command
-{
+public class PullToteIn extends Command {
 	@Override
-	protected void initialize()
-	{
+	protected void initialize() {
 		requires(Robot.arms);
 	}
 
 	@Override
-	protected void execute()
-	{
+	protected void execute() {
 		Robot.arms.forward();
 	}
 
 	@Override
-	protected boolean isFinished()
-	{
+	protected boolean isFinished() {
 		return false;
 	}
 
 	@Override
-	protected void end()
-	{
-		
+	protected void end() {
+
 	}
 
 	@Override
-	protected void interrupted()
-	{
-		
+	protected void interrupted() {
+
 	}
-	
+
 }

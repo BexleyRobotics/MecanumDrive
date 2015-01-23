@@ -4,36 +4,30 @@ import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc.team4753.robot.Robot;
 
-public class PushToteOut extends Command
-{
+public class PushToteOut extends Command {
 	@Override
-	protected void initialize()
-	{
+	protected void initialize() {
 		requires(Robot.arms);
 	}
 
 	@Override
-	protected void execute()
-	{
+	protected void execute() {
 		Robot.arms.backward();
 	}
 
 	@Override
-	protected boolean isFinished()
-	{
+	protected boolean isFinished() {
 		return false;
 	}
 
 	@Override
-	protected void end()
-	{
-		
+	protected void end() {
+
 	}
 
 	@Override
-	protected void interrupted()
-	{
-		
+	protected void interrupted() {
+
 	}
-	
+
 }

@@ -8,9 +8,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Stacker extends Subsystem {
 
-//<<<<<<< HEAD
-    
-//=======
+
 	Solenoid grabbing = new Solenoid(1);
 	Solenoid liftingOne = new Solenoid(2);
 	Solenoid liftingTwo = new Solenoid(3);
@@ -56,5 +54,4 @@ public class Stacker extends Subsystem {
 		liftingOne.set(true);
 		liftingTwo.set(true);
 	}
-// branch '2015' of https://github.com/BexleyRobotics/MecanumDrive.git
 }

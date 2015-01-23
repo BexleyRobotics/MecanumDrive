@@ -18,7 +18,6 @@ public class Pneumatics extends Subsystem
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
-    //=================================
 	Solenoid grabbing = new Solenoid(1);
 	Solenoid liftingOne = new Solenoid(2);
 	Solenoid liftingTwo = new Solenoid(3);
@@ -68,7 +67,6 @@ public class Pneumatics extends Subsystem
 			liftingOne.set(true);
 			liftingTwo.set(true);
 		}
-	//>>>>>>> branch '2015' of https://github.com/BexleyRobotics/MecanumDrive.git
     	}
 
 

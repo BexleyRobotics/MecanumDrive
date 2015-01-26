@@ -18,7 +18,7 @@ public class Pneumatics extends Subsystem
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
-	Solenoid grabbing = new Solenoid(1);
+	DoubleSolenoid grabbing = new DoubleSolenoid(3, 4);
 	Solenoid liftingOne = new Solenoid(2);
 	Solenoid liftingTwo = new Solenoid(3);
 	DoubleSolenoid pushBar = new DoubleSolenoid(1, 2);
@@ -40,7 +40,7 @@ public class Pneumatics extends Subsystem
 		}
 		
 		public void grab() {
-			grabbing.set(true);
+			grabbing.set(DoubleSolenoid.Value.kForward);
 		}
 
 		/**
@@ -56,7 +56,7 @@ public class Pneumatics extends Subsystem
 		 * 
 		 */
 		public void release() {
-			grabbing.set(false);
+			grabbing.set(DoubleSolenoid.Value.kForward);
 		}
 
 		/**

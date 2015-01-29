@@ -76,7 +76,7 @@ public class Robot extends IterativeRobot {
 	 */
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
-		this.drivetrain.drive(oi.getY(), oi.getX());
+		Robot.drivetrain.drive(oi.getY(), oi.getX());
 
 	}
 

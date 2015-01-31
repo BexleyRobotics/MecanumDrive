@@ -46,8 +46,7 @@ public class DriveTrain extends Subsystem {
 	 * @param x
 	 *            extent of curvature
 	 */
-	public void drive(double y, double x) {// sets a distance to travel y and
-											// and an extent to curve x
+	public void drive(double y, double x) {
 
 		double left, right;
 		left = y + x;

@@ -5,7 +5,9 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
+ *SetSpeed - set output of motors using z axis of joystick
  *
+ *@author nathan brownstein
  */
 public class SetSpeed extends Command {
 

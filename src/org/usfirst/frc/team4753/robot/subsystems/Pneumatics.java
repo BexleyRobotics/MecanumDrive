@@ -5,7 +5,9 @@ import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
+ *Pneumatics - how we will control all pneumatics within our robot, will hopefully make controlling easier overall
  *
+ *@author nathan brownstein
  */
 public class Pneumatics extends Subsystem 
 {

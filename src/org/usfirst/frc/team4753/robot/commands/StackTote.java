@@ -7,10 +7,14 @@ import edu.wpi.first.wpilibj.command.Command;
 
 
 /**
+ *StackTote- will activate internal stacking mechanism, hold totes up until it recieves new tote, then activate to grab entire stack
  *
+ *@author nathan brownstein
  */
 public class StackTote extends Command 
 {
+	private boolean finish;
+	
 	Pneumatics stack = new Pneumatics();
     public StackTote() 
     {
@@ -20,7 +24,7 @@ public class StackTote extends Command
 
     protected void initialize() 
     {
-    	
+    	finish = false;
     }
 
     protected void execute() 
@@ -33,15 +37,17 @@ public class StackTote extends Command
     	setTimeout(1);
     	stack.raise();
     	setTimeout(2);
+    	finish = true;
     }
 
     protected boolean isFinished() 
     {
-        return false;
+        return finish;
     }
 
     protected void end() 
     {
+    	finish = false;
     }
 
 	protected void interrupted() 

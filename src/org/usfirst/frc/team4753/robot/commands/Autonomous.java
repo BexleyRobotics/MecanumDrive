@@ -3,7 +3,9 @@ package org.usfirst.frc.team4753.robot.commands;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
+ *Autonomous- command group to coordinate what our robot will do during auto period at beginning of match
  *
+ *@author nathan brownstein
  */
 public class Autonomous extends CommandGroup {
     
@@ -12,7 +14,7 @@ public class Autonomous extends CommandGroup {
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
         // these will run in order.
-    	addSequential(new AutonomousMove());
+    	addSequential(new AutonomousMove(2.0));
         // To run multiple commands at the same time,
         // use addParallel()
         // e.g. addParallel(new Command1());

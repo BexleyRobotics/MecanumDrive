@@ -6,21 +6,27 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
+ *AutonomousMove - designed to move robot forward for certain amount of time, which we will change as required
  *
+ *@author nathan brownstein
  */
 public class AutonomousMove extends Command {
 	
 	private Timer time;
+	private double timetodrive;
 	DriveTrain speed = new DriveTrain();
 
-    public AutonomousMove() {
+    public AutonomousMove(double timing) 
+    {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
+    	timetodrive = timing;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() 
     {
+    	time.reset();
     	time.start();
     }
 
@@ -34,7 +40,7 @@ public class AutonomousMove extends Command {
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() 
     {
-    	return (time.get() >= 2.0);
+    	return (time.get() >= timetodrive);
     }
 
     // Called once after isFinished returns true

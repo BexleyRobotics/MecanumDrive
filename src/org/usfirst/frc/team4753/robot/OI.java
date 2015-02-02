@@ -20,9 +20,10 @@ public class OI {
 	// Button button = new JoystickButton(stick, buttonNumber);
 
 	private Joystick stick = new Joystick(0);
-	private Button x = new JoystickButton(stick, 1);
-	private Button button1 = new JoystickButton(stick, 2);
-	private Button button2 = new JoystickButton(stick, 3);
+	private Button button1 = new JoystickButton(stick, 1);
+	private Button button2 = new JoystickButton(stick, 2);
+	private Button button3 = new JoystickButton(stick, 3);
+	private Button button4 = new JoystickButton(stick, 4);
 	private Button button6 = new JoystickButton(stick, 6);
     // There are a few additional built in buttons you can use. Additionally,
     // by subclassing Button you can create custom triggers and bind those to
@@ -41,7 +42,7 @@ public class OI {
 		// button.whenPressed(new ExampleCommand());
 
 
-		x.whenPressed(new SetSpeed(stick));
+		button1.whenPressed(new SetSpeed(stick));
 
     
     // Run the command while the button is being held down and interrupt it once
@@ -51,8 +52,9 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
-	button1.whileHeld(new PullToteIn());
-	button2.whileHeld(new PushToteOut());
+	button2.whileHeld(new PullToteIn());
+	button3.whileHeld(new PushToteOut());
+	button4.whenPressed(new StackTote());
 	button6.whileHeld(new ToggleEjector());
 	
 

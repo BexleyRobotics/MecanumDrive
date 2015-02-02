@@ -20,6 +20,7 @@ public class OI {
 	// Button button = new JoystickButton(stick, buttonNumber);
 
 	private Joystick stick = new Joystick(0);
+	private Button x = new JoystickButton(stick, 1);
 	private Button button1 = new JoystickButton(stick, 2);
 	private Button button2 = new JoystickButton(stick, 3);
 	private Button button6 = new JoystickButton(stick, 6);
@@ -40,7 +41,6 @@ public class OI {
 		// button.whenPressed(new ExampleCommand());
 
 
-		Button x = new JoystickButton(stick, 1);
 		x.whenPressed(new SetSpeed(stick));
 
     
@@ -65,8 +65,6 @@ public class OI {
 		// command
 		// until it is finished as determined by it's isFinished method.
 		// button.whenReleased(new ExampleCommand());
-		button1.whileHeld(new PullToteIn());
-		button2.whileHeld(new PushToteOut());
 
 	}
 

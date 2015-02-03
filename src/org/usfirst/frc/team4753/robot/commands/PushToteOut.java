@@ -21,8 +21,9 @@ public class PushToteOut extends Command {
 	}
 
 	@Override
-	protected void end() {
-
+	protected void end()
+	{
+		Robot.arms.stop();
 	}
 
 	@Override

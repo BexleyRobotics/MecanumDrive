@@ -22,7 +22,7 @@ public class SetSpeed extends Command {
 	 * 
 	 * @param joy
 	 */
-	public SetSpeed(Joystick joy) {
+	public SetSpeed() {
 
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);

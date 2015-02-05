@@ -22,7 +22,7 @@ public class OI
    
 	public OI() 
 	{
-		button1.whenPressed(new SetSpeed(stick));
+		button1.whenPressed(new SetSpeed());
 		button2.whileHeld(new PullToteIn());
 		button3.whileHeld(new PushToteOut());
 		button4.whenPressed(new StackTote());

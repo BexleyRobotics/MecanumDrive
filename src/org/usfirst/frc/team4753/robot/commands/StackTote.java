@@ -1,6 +1,6 @@
 package org.usfirst.frc.team4753.robot.commands;
 
-import org.usfirst.frc.team4753.robot.Robot;
+import static org.usfirst.frc.team4753.robot.Robot.pneumatics;
 import org.usfirst.frc.team4753.robot.subsystems.Pneumatics;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -15,10 +15,10 @@ public class StackTote extends Command
 {
 	private boolean finish;
 	
-	Pneumatics stack = new Pneumatics();
+	
     public StackTote() 
     {
-    	requires(Robot.pneumatics);
+    	requires(pneumatics);
     	
     }
 
@@ -29,13 +29,13 @@ public class StackTote extends Command
 
     protected void execute() 
     {
-    	stack.release();
+    	pneumatics.release();
     	setTimeout(1);
-    	stack.lower();
+    	pneumatics.lower();
     	setTimeout(2);
-    	stack.grab();
+    	pneumatics.grab();
     	setTimeout(1);
-    	stack.raise();
+    	pneumatics.raise();
     	setTimeout(2);
     	finish = true;
     }

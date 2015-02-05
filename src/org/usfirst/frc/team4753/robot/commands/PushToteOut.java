@@ -2,17 +2,17 @@ package org.usfirst.frc.team4753.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-import org.usfirst.frc.team4753.robot.Robot;
+import static org.usfirst.frc.team4753.robot.Robot.arms;
 
 public class PushToteOut extends Command {
 	@Override
 	protected void initialize() {
-		requires(Robot.arms);
+		requires(arms);
 	}
 
 	@Override
 	protected void execute() {
-		Robot.arms.backward();
+		arms.backward();
 	}
 
 	@Override
@@ -23,7 +23,7 @@ public class PushToteOut extends Command {
 	@Override
 	protected void end()
 	{
-		Robot.arms.stop();
+		arms.stop();
 	}
 
 	@Override

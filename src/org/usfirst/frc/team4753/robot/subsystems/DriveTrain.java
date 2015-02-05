@@ -1,6 +1,12 @@
 package org.usfirst.frc.team4753.robot.subsystems;
 
-import org.usfirst.frc.team4753.robot.RobotMap;
+// Static imports for motor indexes
+import static org.usfirst.frc.team4753.robot.RobotMap.FRONT_LEFT_DRIVE_MOTOR;
+import static org.usfirst.frc.team4753.robot.RobotMap.FRONT_RIGHT_DRIVE_MOTOR;
+import static org.usfirst.frc.team4753.robot.RobotMap.BACK_LEFT_DRIVE_MOTOR;
+import static org.usfirst.frc.team4753.robot.RobotMap.BACK_RIGHT_DRIVE_MOTOR;
+
+
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.RobotDrive;
 
@@ -23,8 +29,8 @@ public class DriveTrain extends Subsystem {
 	 * 
 	 */
 	public DriveTrain() {
-		drive = new RobotDrive(RobotMap.LEFT_DRIVE_MOTOR,
-				RobotMap.RIGHT_DRIVE_MOTOR);
+		drive = new RobotDrive(FRONT_LEFT_DRIVE_MOTOR,BACK_LEFT_DRIVE_MOTOR, 
+				FRONT_RIGHT_DRIVE_MOTOR, BACK_RIGHT_DRIVE_MOTOR);
 
 	}
 

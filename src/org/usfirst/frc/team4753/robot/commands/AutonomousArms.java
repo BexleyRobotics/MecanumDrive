@@ -1,6 +1,6 @@
 package org.usfirst.frc.team4753.robot.commands;
 
-import org.usfirst.frc.team4753.robot.subsystems.WheelArm;
+import static org.usfirst.frc.team4753.robot.Robot.arms;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
@@ -12,7 +12,6 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class AutonomousArms extends Command {
 	private Timer time;
-	WheelArm arms = new WheelArm();
 
     public AutonomousArms() 
     {

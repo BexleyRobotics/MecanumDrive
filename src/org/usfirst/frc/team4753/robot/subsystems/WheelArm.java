@@ -1,6 +1,8 @@
 package org.usfirst.frc.team4753.robot.subsystems;
 
-import org.usfirst.frc.team4753.robot.RobotMap;
+import static org.usfirst.frc.team4753.robot.RobotMap.LEFT_ARM_MOTOR;
+import static org.usfirst.frc.team4753.robot.RobotMap.MIDDLE_ARM_MOTOR;
+import static org.usfirst.frc.team4753.robot.RobotMap.RIGHT_ARM_MOTOR;
 
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Victor;
@@ -16,9 +18,9 @@ public class WheelArm extends Subsystem {
 	private SpeedController left, middle, right;
 
 	public WheelArm() {
-		left = new Victor(RobotMap.LEFT_ARM_MOTOR);
-		middle = new Victor(RobotMap.MIDDLE_ARM_MOTOR);
-		right = new Victor(RobotMap.RIGHT_ARM_MOTOR);
+		left = new Victor(LEFT_ARM_MOTOR);
+		middle = new Victor(MIDDLE_ARM_MOTOR);
+		right = new Victor(RIGHT_ARM_MOTOR);
 	}
 
 	public void initDefaultCommand() {

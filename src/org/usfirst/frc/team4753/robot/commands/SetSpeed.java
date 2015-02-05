@@ -1,6 +1,8 @@
 package org.usfirst.frc.team4753.robot.commands;
 
-import org.usfirst.frc.team4753.robot.Robot;
+import static org.usfirst.frc.team4753.robot.Robot.drivetrain;
+import static org.usfirst.frc.team4753.robot.Robot.oi;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -11,7 +13,6 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class SetSpeed extends Command {
 
-	private Joystick stick;
 	private boolean finished = false;
 
 	/**
@@ -25,9 +26,7 @@ public class SetSpeed extends Command {
 
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
-		requires(Robot.drivetrain);
-
-		stick = joy;
+		requires(drivetrain);
 	}
 
 	// Called just before this Command runs the first time
@@ -38,12 +37,12 @@ public class SetSpeed extends Command {
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
 		double setSpeed;
-		setSpeed = -stick.getZ();
+		setSpeed = -oi.getZ();
 		if (setSpeed < -0.9) {
 			setSpeed = -0.9;
 		}
 		setSpeed = (.5 + (setSpeed / 2));
-		Robot.drivetrain.setMaxOutput(setSpeed);
+		drivetrain.setMaxOutput(setSpeed);
 		finished = true;
 	}
 

@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
+import org.usfirst.frc.team4753.robot.commands.Autonomous;
 import org.usfirst.frc.team4753.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team4753.robot.subsystems.Pneumatics;
 import org.usfirst.frc.team4753.robot.subsystems.WheelArm;
@@ -35,6 +36,7 @@ public class Robot extends IterativeRobot {
 		arms = new WheelArm();
 		pneumatics = new Pneumatics();
 		oi = new OI();
+		autonomousCommand = new Autonomous();
 	}
 
 	public void disabledPeriodic() {

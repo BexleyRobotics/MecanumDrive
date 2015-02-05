@@ -40,4 +40,8 @@ public class OI
 	public double getX() {
 		return stick.getX();
 	}
+	
+	public double getZ(){
+		return stick.getZ();
+	}
 }

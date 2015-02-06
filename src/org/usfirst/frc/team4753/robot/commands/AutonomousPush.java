@@ -2,13 +2,7 @@ package org.usfirst.frc.team4753.robot.commands;
 
 import static org.usfirst.frc.team4753.robot.Robot.arms;
 import static org.usfirst.frc.team4753.robot.Robot.pneumatics;
-
-
-
-
 import edu.wpi.first.wpilibj.command.Command;
-
-import org.usfirst.frc.team4753.robot.subsystems.*;
 import edu.wpi.first.wpilibj.Timer;
 
 /**

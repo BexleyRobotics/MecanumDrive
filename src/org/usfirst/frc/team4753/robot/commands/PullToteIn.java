@@ -27,8 +27,9 @@ public class PullToteIn extends Command {
 	}
 
 	@Override
-	protected void interrupted() {
-
+	protected void interrupted() 
+	{
+		end();
 	}
 
 }

@@ -2,8 +2,6 @@ package org.usfirst.frc.team4753.robot.commands;
 
 import static org.usfirst.frc.team4753.robot.Robot.drivetrain;
 import static org.usfirst.frc.team4753.robot.Robot.oi;
-
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -58,6 +56,8 @@ public class SetSpeed extends Command {
 
 	// Called when another command which requires one or more of the same
 	// subsystems is scheduled to run
-	protected void interrupted() {
+	protected void interrupted() 
+	{
+		end();
 	}
 }

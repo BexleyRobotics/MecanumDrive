@@ -5,7 +5,6 @@ import static org.usfirst.frc.team4753.robot.RobotMap.MIDDLE_ARM_MOTOR;
 import static org.usfirst.frc.team4753.robot.RobotMap.RIGHT_ARM_MOTOR;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
-import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**

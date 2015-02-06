@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4753.robot.commands;
 
 import static org.usfirst.frc.team4753.robot.Robot.pneumatics;
+import static org.usfirst.frc.team4753.robot.Robot.arms;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -11,11 +12,12 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  *@author nathan brownstein
  */
-public class ToggleEjector extends Command {
+public class Eject extends Command {
 
-    public ToggleEjector() 
+    public Eject() 
     {
     	requires (pneumatics);
+    	requires(arms);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
@@ -23,12 +25,14 @@ public class ToggleEjector extends Command {
     // Called just before this Command runs the first time
     protected void initialize() 
     {
+    	pneumatics.eject();
+    	arms.backward();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-    	pneumatics.eject();
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -42,10 +46,13 @@ public class ToggleEjector extends Command {
     protected void end() 
     {
     	pneumatics.retract();
+    	arms.stop();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
-    protected void interrupted() {
+    protected void interrupted() 
+    {
+    	end();
     }
 }

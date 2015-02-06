@@ -16,17 +16,15 @@ public class OI
 	private Joystick stick = new Joystick(0);
 	private Button button1 = new JoystickButton(stick, 1);
 	private Button button2 = new JoystickButton(stick, 2);
-	private Button button3 = new JoystickButton(stick, 3);
-	private Button button4 = new JoystickButton(stick, 4);
-	private Button button6 = new JoystickButton(stick, 6);
+	private Button button3 = new JoystickButton(stick, 4);
+	private Button button4 = new JoystickButton(stick, 6);
    
 	public OI() 
 	{
 		button1.whenPressed(new SetSpeed());
 		button2.whileHeld(new PullToteIn());
-		button3.whileHeld(new PushToteOut());
-		button4.whenPressed(new StackTote());
-		button6.whileHeld(new ToggleEjector());
+		button3.whenPressed(new StackTote());
+		button4.whileHeld(new Eject());
 	}
 
 	public Joystick getJoy() {

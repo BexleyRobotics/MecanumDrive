@@ -31,7 +31,7 @@ public class AutonomousPush extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-    		arms.backward();
+    		arms.backward(-1.0);
     		pneumatics.release();
     		pneumatics.eject();
     		

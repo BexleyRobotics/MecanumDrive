@@ -2,6 +2,7 @@ package org.usfirst.frc.team4753.robot.commands;
 
 import static org.usfirst.frc.team4753.robot.Robot.pneumatics;
 import static org.usfirst.frc.team4753.robot.Robot.arms;
+import static org.usfirst.frc.team4753.robot.Robot.oi;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -25,8 +26,9 @@ public class Eject extends Command {
     // Called just before this Command runs the first time
     protected void initialize() 
     {
+    	double speed = oi.getY();
     	pneumatics.eject();
-    	arms.backward();
+    	arms.backward(speed);
     }
 
     // Called repeatedly when this Command is scheduled to run

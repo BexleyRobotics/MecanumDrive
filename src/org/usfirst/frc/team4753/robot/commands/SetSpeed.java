@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4753.robot.commands;
 
 import static org.usfirst.frc.team4753.robot.Robot.drivetrain;
+import static org.usfirst.frc.team4753.robot.Robot.arms;
 import static org.usfirst.frc.team4753.robot.Robot.oi;
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -41,6 +42,7 @@ public class SetSpeed extends Command {
 		}
 		setSpeed = (.5 + (setSpeed / 2));
 		drivetrain.setMaxOutput(setSpeed);
+		arms.setReverseMax(setSpeed);
 		finished = true;
 	}
 

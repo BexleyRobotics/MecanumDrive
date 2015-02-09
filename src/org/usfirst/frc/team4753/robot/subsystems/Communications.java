@@ -1,7 +1,10 @@
 package org.usfirst.frc.team4753.robot.subsystems;
 
+import edu.wpi.first.wpilibj.Sendable;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.networktables.*;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
 /**
@@ -14,15 +17,18 @@ public class Communications extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 	
-	private NetworkTable table;
+	private NetworkTable jetson;
+	
 	
 	public Communications(){
-		table = NetworkTable.getTable("SmartDashboard");
+		jetson = NetworkTable.getTable("Jetson");
+		
 	}
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
+    
 }
 

@@ -44,10 +44,14 @@ public class Communications extends Subsystem {
     	numStacked = 0;
     	dashboard.putInt("Number of Totes", numStacked);
     }
-    public void addTote()
-    {
-    	numStacked++;
+	public void addTote() 
+	{
+		numStacked++;
     	dashboard.putInt("Number of Totes", numStacked);
-    }
+	}
+	public void speedometer(double speedpercent)
+	{
+		dashboard.putDouble("Speed", speedpercent);
+	}
 }
 

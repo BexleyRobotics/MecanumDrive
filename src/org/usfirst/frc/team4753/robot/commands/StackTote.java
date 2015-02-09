@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4753.robot.commands;
 
 import static org.usfirst.frc.team4753.robot.Robot.pneumatics;
+import static org.usfirst.frc.team4753.robot.Robot.comms;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -36,6 +37,7 @@ public class StackTote extends Command
     	setTimeout(1);
     	pneumatics.raise();
     	setTimeout(2);
+    	comms.addTote();
     	finish = true;
     }
 

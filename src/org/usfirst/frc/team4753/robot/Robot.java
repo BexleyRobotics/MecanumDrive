@@ -27,7 +27,7 @@ public class Robot extends IterativeRobot {
 	public static Pneumatics pneumatics;
 	public static Communications comms;
 	Command autonomousCommand;
-	
+	int numStacked = 0;
 
 	/**
 	 * This function is run when the robot is first started up and should be

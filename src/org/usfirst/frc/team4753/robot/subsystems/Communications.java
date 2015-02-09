@@ -18,12 +18,13 @@ public class Communications extends Subsystem {
     // here. Call these from Commands.
 	
 	private NetworkTable jetson;
-	
+	SmartDashboard dashboard = new SmartDashboard();
+	int numStacked = 0;
 	
 	public Communications()
 	{
 		jetson = NetworkTable.getTable("Jetson");
-		SmartDashboard dashboard = new SmartDashboard();
+		
 		dashboard.putInt("Number of Totes", 0);
 		dashboard.putDouble("Speed", 0.0);
 		
@@ -37,6 +38,16 @@ public class Communications extends Subsystem {
     public void startTime()
     {
     	
+    }
+    public void resetTotes()
+    {
+    	numStacked = 0;
+    	dashboard.putInt("Number of Totes", numStacked);
+    }
+    public void addTote()
+    {
+    	numStacked++;
+    	dashboard.putInt("Number of Totes", numStacked);
     }
 }
 

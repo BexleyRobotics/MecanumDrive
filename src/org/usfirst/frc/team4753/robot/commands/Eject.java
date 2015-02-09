@@ -6,7 +6,7 @@ import static org.usfirst.frc.team4753.robot.Robot.oi;
 
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.*;
-
+import static org.usfirst.frc.team4753.robot.Robot.comms;
 
 /**
  *ToggleEjector - how we will tell the robot to push the totes from internal stacking mechanism using pneumatic subsystem
@@ -50,7 +50,7 @@ public class Eject extends Command {
     // Called once after isFinished returns true
     protected void end() 
     {
-    	SmartDashboard.putInt(key, 0);
+    	comms.resetTotes();
     	pneumatics.retract();
     	arms.stop();
     }

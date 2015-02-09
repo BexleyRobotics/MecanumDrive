@@ -23,13 +23,20 @@ public class Communications extends Subsystem {
 	public Communications()
 	{
 		jetson = NetworkTable.getTable("Jetson");
+		SmartDashboard dashboard = new SmartDashboard();
+		dashboard.putInt("Number of Totes", 0);
+		dashboard.putDouble("Speed", 0.0);
 		
 	}
 
-    public void initDefaultCommand() {
+    public void initDefaultCommand() 
+    {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
-    
+    public void startTime()
+    {
+    	
+    }
 }
 

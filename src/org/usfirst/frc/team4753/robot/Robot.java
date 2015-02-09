@@ -39,9 +39,13 @@ public class Robot extends IterativeRobot {
 		drivetrain = new DriveTrain();
 		arms = new WheelArm();
 		pneumatics = new Pneumatics();
-		oi = new OI();
-		autonomousCommand = new Autonomous();
 		comms = new Communications();
+		oi = new OI();
+		comms.startTime();
+		pneumatics.grab();
+		pneumatics.raise();
+		
+		autonomousCommand = new Autonomous();
 	}
 
 	public void disabledPeriodic() {
@@ -81,10 +85,11 @@ public class Robot extends IterativeRobot {
 	/**
 	 * This function is called periodically during operator control
 	 */
-	public void teleopPeriodic() {
+	public void teleopPeriodic() 
+	{
 		Scheduler.getInstance().run();
 		Robot.drivetrain.drive(oi.getY(), oi.getX());
-
+		
 	}
 
 	/**

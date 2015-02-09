@@ -4,6 +4,7 @@ import static org.usfirst.frc.team4753.robot.Robot.drivetrain;
 import static org.usfirst.frc.team4753.robot.Robot.arms;
 import static org.usfirst.frc.team4753.robot.Robot.oi;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.*;
 
 /**
  *SetSpeed - set output of motors using z axis of joystick

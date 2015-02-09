@@ -5,7 +5,7 @@ import static org.usfirst.frc.team4753.robot.Robot.arms;
 import static org.usfirst.frc.team4753.robot.Robot.oi;
 
 import edu.wpi.first.wpilibj.command.Command;
-
+import edu.wpi.first.wpilibj.smartdashboard.*;
 
 
 /**
@@ -50,6 +50,7 @@ public class Eject extends Command {
     // Called once after isFinished returns true
     protected void end() 
     {
+    	SmartDashboard.putInt(key, 0);
     	pneumatics.retract();
     	arms.stop();
     }

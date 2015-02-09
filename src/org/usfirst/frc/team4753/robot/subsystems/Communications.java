@@ -9,14 +9,14 @@ import edu.wpi.first.wpilibj.networktables.*;
  * 
  * @author Ian Foreman
  */
-public class NetworkTableComms extends Subsystem {
+public class Communications extends Subsystem {
     
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 	
 	private NetworkTable table;
 	
-	public NetworkTableComms(){
+	public Communications(){
 		table = NetworkTable.getTable("SmartDashboard");
 	}
 

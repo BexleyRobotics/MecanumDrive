@@ -9,6 +9,8 @@ import org.usfirst.frc.team4753.robot.commands.Autonomous;
 import org.usfirst.frc.team4753.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team4753.robot.subsystems.Pneumatics;
 import org.usfirst.frc.team4753.robot.subsystems.WheelArm;
+import edu.wpi.first.wpilibj.smartdashboard.*;
+import org.usfirst.frc.team4753.robot.subsystems.Communications;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -23,7 +25,9 @@ public class Robot extends IterativeRobot {
 	public static DriveTrain drivetrain;
 	public static WheelArm arms;
 	public static Pneumatics pneumatics;
+	public static Communications comms;
 	Command autonomousCommand;
+	
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -37,6 +41,7 @@ public class Robot extends IterativeRobot {
 		pneumatics = new Pneumatics();
 		oi = new OI();
 		autonomousCommand = new Autonomous();
+		comms = new Communications();
 	}
 
 	public void disabledPeriodic() {

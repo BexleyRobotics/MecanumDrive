@@ -20,7 +20,8 @@ public class Communications extends Subsystem {
 	private NetworkTable jetson;
 	
 	
-	public Communications(){
+	public Communications()
+	{
 		jetson = NetworkTable.getTable("Jetson");
 		
 	}

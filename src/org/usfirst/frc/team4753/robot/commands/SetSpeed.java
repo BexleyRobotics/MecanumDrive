@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class SetSpeed extends Command {
 
 	private boolean finished = false;
+	double setSpeed;
 
 	/**
 	 * SetSpeed uses the Z axis of the joystick (throttle on ours) to tell the
@@ -35,7 +36,7 @@ public class SetSpeed extends Command {
 
 	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
-		double setSpeed;
+		
 		setSpeed = -oi.getZ();
 		if (setSpeed < -0.9) {
 			setSpeed = -0.9;

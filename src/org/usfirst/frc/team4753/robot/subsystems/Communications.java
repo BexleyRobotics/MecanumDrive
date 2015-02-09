@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.networktables.*;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.Timer;
 
 
 /**
@@ -20,6 +21,7 @@ public class Communications extends Subsystem {
 	private NetworkTable jetson;
 	SmartDashboard dashboard = new SmartDashboard();
 	int numStacked = 0;
+	Timer time = new Timer();
 	
 	public Communications()
 	{
@@ -27,7 +29,9 @@ public class Communications extends Subsystem {
 		
 		dashboard.putInt("Number of Totes", 0);
 		dashboard.putDouble("Speed", 0.0);
-		
+		dashboard.putDouble("Time", 0.0);
+		time.reset();
+		time.start();
 	}
 
     public void initDefaultCommand() 
@@ -37,7 +41,7 @@ public class Communications extends Subsystem {
     }
     public void startTime()
     {
-    	
+    	dashboard.putDouble("Time", (time.get()));
     }
     public void resetTotes()
     {

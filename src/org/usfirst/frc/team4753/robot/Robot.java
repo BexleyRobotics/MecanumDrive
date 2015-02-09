@@ -44,7 +44,7 @@ public class Robot extends IterativeRobot {
 		comms.startTime();
 		pneumatics.grab();
 		pneumatics.raise();
-		
+		comms.startTime();
 		autonomousCommand = new Autonomous();
 	}
 
@@ -89,7 +89,7 @@ public class Robot extends IterativeRobot {
 	{
 		Scheduler.getInstance().run();
 		Robot.drivetrain.drive(oi.getY(), oi.getX());
-		
+		comms.startTime();
 	}
 
 	/**

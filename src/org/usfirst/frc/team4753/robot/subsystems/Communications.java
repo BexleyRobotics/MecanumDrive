@@ -19,7 +19,6 @@ public class Communications extends Subsystem {
     // here. Call these from Commands.
 	
 	private NetworkTable jetson;
-	SmartDashboard dashboard = new SmartDashboard();
 	int numStacked = 0;
 	Timer time = new Timer();
 	
@@ -27,9 +26,9 @@ public class Communications extends Subsystem {
 	{
 		jetson = NetworkTable.getTable("Jetson");
 		
-		dashboard.putNumber("Number of Totes", 0);
-		dashboard.putNumber("Speed", 0.0);
-		dashboard.putNumber("Time", 0.0);
+		SmartDashboard.putNumber("Number of Totes", 0);
+		SmartDashboard.putNumber("Speed", 0.0);
+		SmartDashboard.putNumber("Time", 0.0);
 		time.reset();
 		time.start();
 	}
@@ -41,21 +40,24 @@ public class Communications extends Subsystem {
     }
     public void startTime()
     {
-    	dashboard.putNumber("Time", (time.get()));
+    	SmartDashboard.putNumber("Time", (time.get()));
     }
+    
     public void resetTotes()
     {
     	numStacked = 0;
-    	dashboard.putNumber("Number of Totes", numStacked);
+    	SmartDashboard.putNumber("Number of Totes", numStacked);
     }
+    
 	public void addTote() 
 	{
 		numStacked++;
-    	dashboard.putNumber("Number of Totes", numStacked);
+    	SmartDashboard.putNumber("Number of Totes", numStacked);
 	}
+	
 	public void speedometer(double speedpercent)
 	{
-		dashboard.putNumber("Speed", speedpercent);
+		SmartDashboard.putNumber("Speed", speedpercent);
 	}
 }
 

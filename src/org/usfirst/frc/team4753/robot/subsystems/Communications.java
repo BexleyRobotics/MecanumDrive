@@ -27,9 +27,9 @@ public class Communications extends Subsystem {
 	{
 		jetson = NetworkTable.getTable("Jetson");
 		
-		dashboard.putInt("Number of Totes", 0);
-		dashboard.putDouble("Speed", 0.0);
-		dashboard.putDouble("Time", 0.0);
+		dashboard.putNumber("Number of Totes", 0);
+		dashboard.putNumber("Speed", 0.0);
+		dashboard.putNumber("Time", 0.0);
 		time.reset();
 		time.start();
 	}
@@ -41,21 +41,21 @@ public class Communications extends Subsystem {
     }
     public void startTime()
     {
-    	dashboard.putDouble("Time", (time.get()));
+    	dashboard.putNumber("Time", (time.get()));
     }
     public void resetTotes()
     {
     	numStacked = 0;
-    	dashboard.putInt("Number of Totes", numStacked);
+    	dashboard.putNumber("Number of Totes", numStacked);
     }
 	public void addTote() 
 	{
 		numStacked++;
-    	dashboard.putInt("Number of Totes", numStacked);
+    	dashboard.putNumber("Number of Totes", numStacked);
 	}
 	public void speedometer(double speedpercent)
 	{
-		dashboard.putDouble("Speed", speedpercent);
+		dashboard.putNumber("Speed", speedpercent);
 	}
 }
 

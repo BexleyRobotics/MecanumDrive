@@ -38,23 +38,38 @@ public class Communications extends Subsystem {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
+    /**
+     * startTime will make a timer so that we know how long we have in the match.
+     * 
+     * 
+     * 
+     */
     public void startTime()
     {
     	SmartDashboard.putNumber("Time", (time.get()));
     }
-    
+    /**
+     * resetTotes will reset number of totes displayed in Number Of Totes key to 0
+     * 
+     * 
+     */
     public void resetTotes()
     {
     	numStacked = 0;
     	SmartDashboard.putNumber("Number of Totes", numStacked);
     }
-    
+    /**
+     * addTote will add one to our tote total, which will have some indicator on the dashboard
+     */
 	public void addTote() 
 	{
 		numStacked++;
     	SmartDashboard.putNumber("Number of Totes", numStacked);
 	}
-	
+	/**
+	 * speedometer will display the maximum power for our wheels
+	 * @param speedpercent
+	 */
 	public void speedometer(double speedpercent)
 	{
 		SmartDashboard.putNumber("Speed", speedpercent);

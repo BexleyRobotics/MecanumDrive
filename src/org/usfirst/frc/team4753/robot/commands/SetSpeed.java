@@ -22,6 +22,7 @@ public class SetSpeed extends Command {
 	 * requires drivetrain, joystick
 	 * 
 	 * @param joy
+	 * @author nathan brownstein
 	 */
 	public SetSpeed() {
 

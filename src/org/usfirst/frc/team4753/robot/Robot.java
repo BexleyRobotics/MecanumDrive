@@ -9,8 +9,8 @@ import org.usfirst.frc.team4753.robot.commands.Autonomous;
 import org.usfirst.frc.team4753.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team4753.robot.subsystems.Pneumatics;
 import org.usfirst.frc.team4753.robot.subsystems.WheelArm;
-import edu.wpi.first.wpilibj.smartdashboard.*;
 import org.usfirst.frc.team4753.robot.subsystems.Communications;
+import org.usfirst.frc.team4753.robot.subsystems.Dashboard;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -26,6 +26,7 @@ public class Robot extends IterativeRobot {
 	public static WheelArm arms;
 	public static Pneumatics pneumatics;
 	public static Communications comms;
+	public static Dashboard dashboard;
 	Command autonomousCommand;
 	int numStacked = 0;
 
@@ -41,10 +42,10 @@ public class Robot extends IterativeRobot {
 		pneumatics = new Pneumatics();
 		comms = new Communications();
 		oi = new OI();
-		comms.startTime();
+		dashboard = new Dashboard();
+		dashboard.startTime();
 		pneumatics.grab();
 		pneumatics.raise();
-		comms.startTime();
 		autonomousCommand = new Autonomous();
 	}
 
@@ -89,7 +90,7 @@ public class Robot extends IterativeRobot {
 	{
 		Scheduler.getInstance().run();
 		Robot.drivetrain.drive(oi.getY(), oi.getX());
-		comms.startTime();
+		dashboard.startTime();
 	}
 
 	/**

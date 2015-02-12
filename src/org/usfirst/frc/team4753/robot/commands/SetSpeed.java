@@ -4,7 +4,7 @@ import static org.usfirst.frc.team4753.robot.Robot.drivetrain;
 import static org.usfirst.frc.team4753.robot.Robot.arms;
 import static org.usfirst.frc.team4753.robot.Robot.oi;
 import edu.wpi.first.wpilibj.command.Command;
-import static org.usfirst.frc.team4753.robot.Robot.comms;
+import static org.usfirst.frc.team4753.robot.Robot.dashboard;
 
 /**
  *SetSpeed - set output of motors using z axis of joystick
@@ -46,7 +46,7 @@ public class SetSpeed extends Command {
 		setSpeed = (.5 + (setSpeed / 2));
 		drivetrain.setMaxOutput(setSpeed);
 		arms.setReverseMax(setSpeed);
-		comms.speedometer(setSpeed);
+		dashboard.speedometer(setSpeed);
 		finished = true;
 	}
 

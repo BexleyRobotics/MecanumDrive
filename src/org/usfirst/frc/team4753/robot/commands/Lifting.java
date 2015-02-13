@@ -29,12 +29,12 @@ public class Lifting extends Command
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-    	if (up = true)
+    	if (up == true)
     	{
     		pneumatics.lower();
     		up = false;
     	}
-    	else if (up = false)
+    	else
     	{
     		pneumatics.raise();
     		up = true;

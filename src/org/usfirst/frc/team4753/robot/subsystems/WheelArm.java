@@ -1,7 +1,6 @@
 package org.usfirst.frc.team4753.robot.subsystems;
 
 import static org.usfirst.frc.team4753.robot.RobotMap.LEFT_ARM_MOTOR;
-import static org.usfirst.frc.team4753.robot.RobotMap.MIDDLE_ARM_MOTOR;
 import static org.usfirst.frc.team4753.robot.RobotMap.RIGHT_ARM_MOTOR;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
@@ -14,7 +13,7 @@ public class WheelArm extends Subsystem {
 
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
-	private SpeedController left, middle, right;
+	private SpeedController left, right;
 	private double reverseMax = 1.0; 
 
 	public WheelArm() {

@@ -31,16 +31,18 @@ public class Clamping extends Command
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-    	if(clamped = false);
+    	if(clamped == false)
     	{
     		pneumatics.grab();
     		clamped = true;
-    	}
-    	else if (clamped = true)
+    	} else
     	{
     		pneumatics.release();
     		clamped = false;
     	}
+    	
+    		
+    	
     	finished = true;
     }
 

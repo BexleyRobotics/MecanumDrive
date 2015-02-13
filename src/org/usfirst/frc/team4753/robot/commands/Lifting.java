@@ -2,6 +2,7 @@ package org.usfirst.frc.team4753.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import static org.usfirst.frc.team4753.robot.Robot.pneumatics;
+import static org.usfirst.frc.team4753.robot.RobotMap.*;
 
 /**
  *This command can be used to toggle the lifting Pneumatics to lift or lower totes
@@ -10,7 +11,6 @@ import static org.usfirst.frc.team4753.robot.Robot.pneumatics;
  */
 public class Lifting extends Command 
 {
-	private boolean up;
 	private boolean finished;
     public Lifting() 
     {
@@ -22,24 +22,22 @@ public class Lifting extends Command
     protected void initialize() 
     {
     	finished = false;
-    	pneumatics.raise();
-    	up = true;
+    	if (lifted == 1)
+    	{
+    		pneumatics.raise();
+    	}
+    	else
+    	{
+    		pneumatics.lower();
+    	}
+    	lifted = lifted*-1;
+    	finished = true;
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-    	if (up == true)
-    	{
-    		pneumatics.lower();
-    		up = false;
-    	}
-    	else
-    	{
-    		pneumatics.raise();
-    		up = true;
-    	}
-    	finished = true;
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()

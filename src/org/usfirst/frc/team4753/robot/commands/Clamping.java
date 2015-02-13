@@ -2,6 +2,7 @@ package org.usfirst.frc.team4753.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import static org.usfirst.frc.team4753.robot.Robot.pneumatics;
+import static org.usfirst.frc.team4753.robot.RobotMap.*;
 
 /**
  *Clamping is a command which will turn the pneumatics to grab the tote on or off
@@ -10,9 +11,7 @@ import static org.usfirst.frc.team4753.robot.Robot.pneumatics;
  */
 public class Clamping extends Command 
 {
-	
-	private boolean clamped;
-	private boolean finished;
+	private boolean finished = false;
 	
     public Clamping() 
     {
@@ -23,27 +22,24 @@ public class Clamping extends Command
     // Called just before this Command runs the first time
     protected void initialize() 
     {
-    	pneumatics.release();
-    	clamped = false;
+    	
+    	if (clamped == -1)
+    	{
+    		pneumatics.grab();
+    	}
+    	else
+    	{
+    		pneumatics.release();
+    	}
+    	clamped = clamped *-1;
+    	finished = true;
     	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-    	if(clamped == false)
-    	{
-    		pneumatics.grab();
-    		clamped = true;
-    	} else
-    	{
-    		pneumatics.release();
-    		clamped = false;
-    	}
     	
-    		
-    	
-    	finished = true;
     }
 
     // Make this return true when this Command no longer needs to run execute()

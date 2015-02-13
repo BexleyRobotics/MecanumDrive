@@ -22,6 +22,6 @@ public class SystemsCheck extends CommandGroup {
     	addSequential(new PullToteIn());
     	setTimeout(2);
     	addSequential(new Eject());
-    	setTimeout(2);
+    	setTimeout(2);	
     }
 }

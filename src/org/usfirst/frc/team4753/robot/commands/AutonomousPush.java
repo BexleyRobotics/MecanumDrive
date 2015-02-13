@@ -24,16 +24,17 @@ public class AutonomousPush extends Command {
     // Called just before this Command runs the first time
     protected void initialize() 
     {
-    	time.reset();
-    	time.start();
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-    		arms.backward(-1.0);
-    		pneumatics.release();
-    		pneumatics.eject();
+    	time.reset();
+    	time.start();
+    	arms.backward(-1.0);
+    	pneumatics.release();
+   		pneumatics.eject();
     		
     }
 
@@ -53,6 +54,8 @@ public class AutonomousPush extends Command {
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
-    protected void interrupted() {
+    protected void interrupted() 
+    {
+    	end();
     }
 }

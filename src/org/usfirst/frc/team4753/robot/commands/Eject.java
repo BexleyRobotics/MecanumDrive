@@ -15,7 +15,7 @@ import static org.usfirst.frc.team4753.robot.Robot.dashboard;
  */
 public class Eject extends Command {
 	double speed;
-
+	private boolean finished;
     public Eject() 
     {
     	requires (pneumatics);
@@ -27,16 +27,18 @@ public class Eject extends Command {
     // Called just before this Command runs the first time
     protected void initialize() 
     {
+    	finished = false;
     	
-    	pneumatics.eject();
     	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
+    	pneumatics.eject();
     	speed = -(oi.getY());
     	arms.backward(speed);
+    	finished = true;
     	
     }
 
@@ -44,7 +46,7 @@ public class Eject extends Command {
     protected boolean isFinished() 
     {
     	
-        return false;
+        return finished;
     }
 
     // Called once after isFinished returns true
@@ -53,6 +55,7 @@ public class Eject extends Command {
     	dashboard.resetTotes();
     	pneumatics.retract();
     	arms.stop();
+    	finished = false;
     }
 
     // Called when another command which requires one or more of the same

@@ -24,11 +24,12 @@ public class StackTote extends Command
 
     protected void initialize() 
     {
-    	finish = false;
+    	
     }
 
     protected void execute() 
     {
+    	finish = false;
     	pneumatics.release();
     	setTimeout(1);
     	pneumatics.lower();

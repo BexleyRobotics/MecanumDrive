@@ -27,13 +27,14 @@ public class AutonomousMove extends Command {
     // Called just before this Command runs the first time
     protected void initialize() 
     {
-    	time.reset();
-    	time.start();
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
+    	time.reset();
+    	time.start();
     	drivetrain.setMaxOutput(.25);
     	drivetrain.drive(1, 0);
     }

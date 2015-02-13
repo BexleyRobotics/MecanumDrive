@@ -1,18 +1,19 @@
 package org.usfirst.frc.team4753.robot.commands;
 
+import org.usfirst.frc.team4753.robot.RobotMap;
+import static org.usfirst.frc.team4753.robot.Robot.*;
+
 import edu.wpi.first.wpilibj.command.Command;
-import static org.usfirst.frc.team4753.robot.Robot.pneumatics;
-import static org.usfirst.frc.team4753.robot.RobotMap.*;
 
 /**
- *This command can be used to toggle the lifting Pneumatics to lift or lower totes
+ *ArmSpinner will be used by Dashboard as a way to set the arms using a button on SmartDashboard
  *
  *@author nathan brownstein
  */
-public class Lifting extends Command 
+public class ArmSpinner extends Command 
 {
-	private boolean finished;
-    public Lifting() 
+	private boolean finish;
+    public ArmSpinner() 
     {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -21,35 +22,40 @@ public class Lifting extends Command
     // Called just before this Command runs the first time
     protected void initialize() 
     {
+    	finish = false;
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-
-    	finished = false;
-    	if (lifted == 1)
+    	finish = false;
+    	if (RobotMap.arms == 0)
     	{
-    		pneumatics.raise();
+    		arms.backward(-1.0);
     	}
-    	else
+    	else if (RobotMap.arms == 1)
     	{
-    		pneumatics.lower();
+    		arms.stop();
     	}
-    	lifted = lifted*-1;
-    	finished = true;
+    	else if (RobotMap.arms == 2)
+    	{
+    		arms.forward();
+    	}
+    	finish = true;
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
-    protected boolean isFinished() 
-    {
-        return finished;
+    protected boolean isFinished() {
+        return finish;
     }
 
     // Called once after isFinished returns true
     protected void end() 
     {
-    	finished = false;
+    	finish = false;
+    	RobotMap.arms++;
+    	RobotMap.arms %= 3;
     }
 
     // Called when another command which requires one or more of the same

@@ -17,7 +17,7 @@ public class RobotMap {
 	// Wheel motor indexes
 	public static final int LEFT_ARM_MOTOR = 2;
 	public static final int RIGHT_ARM_MOTOR = 3;
-	public static final int MIDDLE_ARM_MOTOR = 4;
+	//public static final int MIDDLE_ARM_MOTOR = 4;
 	
 	
 	public static int STACK = 0;

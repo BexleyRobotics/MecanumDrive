@@ -19,7 +19,7 @@ public class WheelArm extends Subsystem {
 
 	public WheelArm() {
 		left = new Talon(LEFT_ARM_MOTOR);
-		middle = new Talon(MIDDLE_ARM_MOTOR);
+		//middle = new Talon(MIDDLE_ARM_MOTOR);
 		right = new Talon(RIGHT_ARM_MOTOR);
 	}
 
@@ -30,19 +30,19 @@ public class WheelArm extends Subsystem {
 
 	public void forward() {
 		left.set(1);
-		middle.set(1);
+		//middle.set(1);
 		right.set(1);
 	}
 
 	public void backward(double speed) {
 		left.set(speed * reverseMax);
-		middle.set(-1);
+		//middle.set(-1);
 		right.set(speed * reverseMax);
 	}
 
 	public void stop() {
 		left.set(0);
-		middle.set(0);
+		//middle.set(0);
 		right.set(0);
 	}
 	

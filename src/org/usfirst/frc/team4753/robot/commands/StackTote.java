@@ -1,7 +1,6 @@
 package org.usfirst.frc.team4753.robot.commands;
 
 import static org.usfirst.frc.team4753.robot.Robot.pneumatics;
-import static org.usfirst.frc.team4753.robot.Robot.comms;
 import static org.usfirst.frc.team4753.robot.Robot.dashboard;
 
 import edu.wpi.first.wpilibj.command.Command;

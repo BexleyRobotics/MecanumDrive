@@ -19,7 +19,6 @@ public class RobotMap {
 	public static final int RIGHT_ARM_MOTOR = 3;
 	//public static final int MIDDLE_ARM_MOTOR = 4;
 	
-	public static int clamped = -1;
-	public static int lifted = 1;
+	
 	public static int STACK = 0;
 }

@@ -1,8 +1,10 @@
 package org.usfirst.frc.team4753.robot.subsystems;
 
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import static org.usfirst.frc.team4753.robot.RobotMap.*;
 
 /**
  *Pneumatics - how we will control all pneumatics within our robot, will hopefully make controlling easier overall
@@ -20,10 +22,21 @@ public class Pneumatics extends Subsystem
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
     }
-	DoubleSolenoid grabbing = new DoubleSolenoid(3, 4);
-	Solenoid liftingOne = new Solenoid(2);
-	Solenoid liftingTwo = new Solenoid(3);
-	DoubleSolenoid pushBar = new DoubleSolenoid(1, 2);
+    
+    
+	private DoubleSolenoid clamping;
+	private DoubleSolenoid lifting;
+	private DoubleSolenoid pushing;
+	private Compressor compressor;
+	
+	public Pneumatics(){
+		clamping = new DoubleSolenoid(CLAMPING_FORWARD,CLAMPING_REVERSE);
+		lifting = new DoubleSolenoid(LIFTING_FORWARD,LIFTING_REVERSE);
+		pushing = new DoubleSolenoid(PUSHING_FORWARD, PUSHING_REVERSE);
+		compressor = new Compressor();
+		compressor.setClosedLoopControl(true);
+		
+	}
 
 		// Put methods for controlling this subsystem
 		// here. Call these from Commands.
@@ -34,31 +47,30 @@ public class Pneumatics extends Subsystem
 		 * 
 		 */
 		public void eject() {
-			pushBar.set(DoubleSolenoid.Value.kForward);
+			pushing.set(DoubleSolenoid.Value.kForward);
 		}
 
 		public void retract() {
-			pushBar.set(DoubleSolenoid.Value.kReverse);
+			pushing.set(DoubleSolenoid.Value.kReverse);
 		}
 		
-		public void grab() {
-			grabbing.set(DoubleSolenoid.Value.kForward);
+		public void clamp() {
+			clamping.set(DoubleSolenoid.Value.kForward);
 		}
 
 		/**
 		 * Retracts pistons so that tote rises false = raise true = lower
 		 */
 		public void raise() {
-			liftingOne.set(false);
-			liftingTwo.set(false);
+			lifting.set(DoubleSolenoid.Value.kReverse);
 		}
 
 		/**
 		 * Releases pistons so that tote is released
 		 * 
 		 */
-		public void release() {
-			grabbing.set(DoubleSolenoid.Value.kForward);
+		public void unclamp() {
+			clamping.set(DoubleSolenoid.Value.kForward);
 		}
 
 		/**
@@ -66,8 +78,7 @@ public class Pneumatics extends Subsystem
 		 * 
 		 */
 		public void lower() {
-			liftingOne.set(true);
-			liftingTwo.set(true);
+			lifting.set(DoubleSolenoid.Value.kForward);
 		}
     	}
 

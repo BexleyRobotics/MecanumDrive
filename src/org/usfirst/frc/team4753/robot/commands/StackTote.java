@@ -30,11 +30,11 @@ public class StackTote extends Command
     protected void execute() 
     {
     	finish = false;
-    	pneumatics.release();
+    	pneumatics.unclamp();
     	setTimeout(1);
     	pneumatics.lower();
     	setTimeout(2);
-    	pneumatics.grab();
+    	pneumatics.clamp();
     	setTimeout(1);
     	pneumatics.raise();
     	setTimeout(2);

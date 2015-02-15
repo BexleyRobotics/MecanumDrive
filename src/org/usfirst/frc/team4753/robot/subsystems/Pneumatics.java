@@ -80,6 +80,16 @@ public class Pneumatics extends Subsystem
 		public void lower() {
 			lifting.set(DoubleSolenoid.Value.kForward);
 		}
-    	}
+		
+		public void startCompressor(){
+			compressor.setClosedLoopControl(false);
+			compressor.start();
+		}
+		
+		public void stopCompressor(){
+			compressor.stop();
+			compressor.setClosedLoopControl(true);
+		}
+}
 
 

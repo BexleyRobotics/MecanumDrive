@@ -1,6 +1,7 @@
 package org.usfirst.frc.team4753.robot.subsystems;
 
 import org.usfirst.frc.team4753.robot.commands.*;
+
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Timer;
@@ -12,8 +13,9 @@ import edu.wpi.first.wpilibj.Timer;
  */
 public class Dashboard extends Subsystem 
 {
-	int numStacked = 0;
-	Timer time = new Timer();
+	private int numStacked = 0;
+	private Timer time = new Timer();
+	private int compressorToggle = -1;
 
     public void initDefaultCommand() 
     {
@@ -28,6 +30,8 @@ public class Dashboard extends Subsystem
 		SmartDashboard.putData("Toggle Lift", new Lifting());
 		SmartDashboard.putData("Toggle Grab", new Clamping());
 		SmartDashboard.putData("Toggle Arms", new ArmSpinner());
+		SmartDashboard.putData("Toggle Compressor", new ToggleCompressor());
+		SmartDashboard.putBoolean("Compressor State", false);
 		time.reset();
 		time.start();
     }
@@ -66,6 +70,11 @@ public class Dashboard extends Subsystem
 	public void speedometer(double speedpercent)
 	{
 		SmartDashboard.putNumber("Speed", speedpercent);
+	}
+	
+	public void compressorState(){
+		compressorToggle *= -1;
+		SmartDashboard.putBoolean("Compressor State", compressorToggle > 0);
 	}
     
 }

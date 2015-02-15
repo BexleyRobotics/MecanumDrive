@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team4753.robot.commands.Autonomous;
+import org.usfirst.frc.team4753.robot.commands.SystemsCheck;
 import org.usfirst.frc.team4753.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team4753.robot.subsystems.Pneumatics;
 import org.usfirst.frc.team4753.robot.subsystems.WheelArm;
@@ -27,7 +28,8 @@ public class Robot extends IterativeRobot {
 	public static Pneumatics pneumatics;
 	public static Communications comms;
 	public static Dashboard dashboard;
-	Command autonomousCommand;
+	private Command autonomousCommand;
+	private Command testCommand;
 	int numStacked = 0;
 
 	/**
@@ -41,12 +43,14 @@ public class Robot extends IterativeRobot {
 		arms = new WheelArm();
 		pneumatics = new Pneumatics();
 		comms = new Communications();
-		oi = new OI();
+		
 		dashboard = new Dashboard();
+		oi = new OI();
 		dashboard.startTime();
-		pneumatics.clamp();
+		pneumatics.unclamp();
 		pneumatics.raise();
 		autonomousCommand = new Autonomous();
+		testCommand = new SystemsCheck();
 	}
 
 	public void disabledPeriodic() {
@@ -99,4 +103,8 @@ public class Robot extends IterativeRobot {
 	public void testPeriodic() {
 		LiveWindow.run();
 	}
+	
+    public void testInit(){
+    	testCommand.start();
+    }
 }

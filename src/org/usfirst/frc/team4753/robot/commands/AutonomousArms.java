@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *Activates arms while in Autonomous Mode
  *
- *@author nathan brownstein
+ *@author Nathan Brownstein
  */
 public class AutonomousArms extends Command {
 	private Timer time;

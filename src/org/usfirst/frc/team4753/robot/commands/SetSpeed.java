@@ -9,7 +9,7 @@ import static org.usfirst.frc.team4753.robot.Robot.dashboard;
 /**
  *SetSpeed - set output of motors using z axis of joystick
  *
- *@author nathan brownstein
+ *@author Nathan Brownstein
  */
 public class SetSpeed extends Command {
 

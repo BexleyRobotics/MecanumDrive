@@ -7,7 +7,7 @@ import static org.usfirst.frc.team4753.robot.RobotMap.*;
 /**
  *Clamping is a command which will turn the pneumatics to grab the tote on or off
  *
- *@author nathan brownstein
+ *@author Nathan Brownstein
  */
 public class Clamping extends Command 
 {

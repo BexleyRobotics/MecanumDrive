@@ -1,15 +1,14 @@
 package org.usfirst.frc.team4753.robot.subsystems;
 
 import org.usfirst.frc.team4753.robot.commands.*;
-
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Timer;
-
+import static org.usfirst.frc.team4753.robot.RobotMap.*;
 /**
  *Dashboard is how we will display information about the robot to the driver and provide buttons to provide additional functions
  *
- *@author nathan brownstein
+ *@author Nathan Brownstein
  */
 public class Dashboard extends Subsystem 
 {
@@ -28,6 +27,7 @@ public class Dashboard extends Subsystem
 		SmartDashboard.putNumber("Speed", 0.0);
 		SmartDashboard.putNumber("Time", 0.0);
 		SmartDashboard.putNumber("ArmSpeed", 0.0);
+		SmartDashboard.putBoolean("Clamped", (clamped == -1));
 		SmartDashboard.putData("Toggle Lift", new Lifting());
 		SmartDashboard.putData("Toggle Grab", new Clamping());
 		SmartDashboard.putData("Toggle Arms", new ArmSpinner());
@@ -59,6 +59,7 @@ public class Dashboard extends Subsystem
 		compressorToggle *= -1;
 		SmartDashboard.putBoolean("Compressor State", compressorToggle > 0);
 	}
+	
     
 }
 

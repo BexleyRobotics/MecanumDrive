@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *ArmSpinner will be used by Dashboard as a way to set the arms using a button on SmartDashboard
  *
- *@author nathan brownstein
+ *@author Nathan Brownstein
  */
 public class ArmSpinner extends Command 
 {

@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *AutonomousMove - designed to move robot forward for certain amount of time, which we will change as required
  *
- *@author nathan brownstein
+ *@author Nathan Brownstein
  */
 public class AutonomousMove extends Command {
 	

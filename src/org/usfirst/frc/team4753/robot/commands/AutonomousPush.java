@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.Timer;
 /**
  *Used to push out all of the totes stacked during the Auto period
  *
- *@author nathan brownstein
+ *@author Nathan Brownstein
  */
 public class AutonomousPush extends Command {
 	private Timer time;

@@ -9,7 +9,7 @@ import static org.usfirst.frc.team4753.robot.RobotMap.*;
 /**
  *Pneumatics - how we will control all pneumatics within our robot, will hopefully make controlling easier overall
  *
- *@author nathan brownstein
+ *@author Nathan Brownstein
  */
 public class Pneumatics extends Subsystem 
 {

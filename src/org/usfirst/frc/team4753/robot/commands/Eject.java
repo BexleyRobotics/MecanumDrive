@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *ToggleEjector - how we will tell the robot to push the totes from internal stacking mechanism using pneumatic subsystem
  *
- *@author nathan brownstein
+ *@author Nathan Brownstein
  */
 public class Eject extends Command {
 	double speed;

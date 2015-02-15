@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 /**
  *Autonomous- command group to coordinate what our robot will do during auto period at beginning of match
  *
- *@author nathan brownstein
+ *@author Nathan Brownstein
  */
 public class Autonomous extends CommandGroup {
     

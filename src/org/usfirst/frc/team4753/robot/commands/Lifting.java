@@ -7,7 +7,7 @@ import static org.usfirst.frc.team4753.robot.RobotMap.*;
 /**
  *This command can be used to toggle the lifting Pneumatics to lift or lower totes
  *
- *@author nathan brownstein
+ *@author Nathan Brownstein
  */
 public class Lifting extends Command 
 {

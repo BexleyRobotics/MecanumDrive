@@ -33,5 +33,5 @@ public class RobotMap {
 	public static int lifted = 1;
 	public static int STACK = 0;
 	public static int arms = 1;
-	public static boolean ejector = false;
+	public static boolean ejected = false;
 }

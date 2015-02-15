@@ -5,6 +5,8 @@ import static org.usfirst.frc.team4753.robot.Robot.arms;
 import static org.usfirst.frc.team4753.robot.Robot.oi;
 import static org.usfirst.frc.team4753.robot.RobotMap.*;
 
+import org.usfirst.frc.team4753.robot.RobotMap;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 
@@ -37,7 +39,7 @@ public class Eject extends Command {
     protected void execute() 
     {
     	pneumatics.eject();
-    	ejector = true;
+    	ejected = true;
     	speed = -(oi.getY());
     	arms.backward(speed);
     	finished = true;
@@ -56,7 +58,7 @@ public class Eject extends Command {
     {
     	
     	pneumatics.retract();
-    	ejector = false;
+    	ejected = false;
     	arms.stop();
     	finished = false;
     }

@@ -12,7 +12,6 @@ import static org.usfirst.frc.team4753.robot.RobotMap.*;
  */
 public class Dashboard extends Subsystem 
 {
-	private int numStacked = 0;
 	private Timer time = new Timer();
 	private int compressorToggle = 0;
 	private String compressor = "Compressor State";

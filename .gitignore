@@ -1,2 +1,5 @@
 *.class
 /sysProps.xml
+bin
+build
+dist

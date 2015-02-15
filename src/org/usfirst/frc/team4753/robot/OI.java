@@ -16,7 +16,6 @@ public class OI
 	private Joystick stick = new Joystick(0);
 	private Button button1 = new JoystickButton(stick, 1);
 	private Button button2 = new JoystickButton(stick, 2);
-	private Button button4 = new JoystickButton(stick, 4);
 	private Button button6 = new JoystickButton(stick, 6);
 	private Button button7 = new JoystickButton(stick, 7);
    
@@ -24,7 +23,6 @@ public class OI
 	{
 		button1.whenPressed(new SetSpeed());
 		button2.whileHeld(new PullToteIn());
-		button4.whenPressed(new StackTote());
 		button6.whileHeld(new Eject());
 		button7.whenPressed(new ToggleCompressor());
 	}

@@ -47,11 +47,11 @@ public class Pneumatics extends Subsystem
 		 * 
 		 */
 		public void eject() {
-			pushing.set(DoubleSolenoid.Value.kForward);
+			pushing.set(DoubleSolenoid.Value.kReverse);
 		}
 
 		public void retract() {
-			pushing.set(DoubleSolenoid.Value.kReverse);
+			pushing.set(DoubleSolenoid.Value.kForward);
 		}
 		
 		public void clamp() {

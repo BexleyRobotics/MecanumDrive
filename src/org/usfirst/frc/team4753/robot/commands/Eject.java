@@ -5,8 +5,6 @@ import static org.usfirst.frc.team4753.robot.Robot.arms;
 import static org.usfirst.frc.team4753.robot.Robot.oi;
 import static org.usfirst.frc.team4753.robot.RobotMap.*;
 
-import org.usfirst.frc.team4753.robot.RobotMap;
-
 import edu.wpi.first.wpilibj.command.Command;
 
 

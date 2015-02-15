@@ -5,7 +5,7 @@ import static org.usfirst.frc.team4753.robot.Robot.arms;
 import static org.usfirst.frc.team4753.robot.Robot.oi;
 
 import edu.wpi.first.wpilibj.command.Command;
-import static org.usfirst.frc.team4753.robot.Robot.dashboard;
+
 
 
 /**
@@ -52,7 +52,7 @@ public class Eject extends Command {
     // Called once after isFinished returns true
     protected void end() 
     {
-    	dashboard.resetTotes();
+    	
     	pneumatics.retract();
     	arms.stop();
     	finished = false;

@@ -28,11 +28,13 @@ public class Dashboard extends Subsystem
 		SmartDashboard.putNumber("Speed", 0.0);
 		SmartDashboard.putNumber("Time", 0.0);
 		SmartDashboard.putNumber("ArmSpeed", 0.0);
+		SmartDashboard.putNumber("Stacked Totes", STACK);
 		SmartDashboard.putBoolean("Clamped", (clamped == -1));
 		SmartDashboard.putBoolean("Lifted", (lifted == -1));
 		SmartDashboard.putBoolean("Ejector", ejected);
+		
 		SmartDashboard.putData("Toggle Lift", new Lifting());
-		SmartDashboard.putData("Toggle Grab", new Clamping());
+		SmartDashboard.putData("Toggle Clamp", new Clamping());
 		SmartDashboard.putData("Toggle Arms", new ArmSpinner());
 		SmartDashboard.putData("Toggle Compressor", new ToggleCompressor());
 		SmartDashboard.putString(compressor, "Auto");

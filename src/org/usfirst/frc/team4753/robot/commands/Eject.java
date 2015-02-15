@@ -58,6 +58,7 @@ public class Eject extends Command {
     	pneumatics.retract();
     	ejected = false;
     	arms.stop();
+    	STACK = 0;
     	finished = false;
     }
 

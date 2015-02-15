@@ -1,5 +1,17 @@
 package org.usfirst.frc.team4753.robot;
 
+import org.usfirst.frc.team4753.robot.commands.ArmSpinner;
+import org.usfirst.frc.team4753.robot.commands.Clamping;
+import org.usfirst.frc.team4753.robot.commands.Eject;
+import org.usfirst.frc.team4753.robot.commands.Lifting;
+import org.usfirst.frc.team4753.robot.commands.PullToteIn;
+import org.usfirst.frc.team4753.robot.commands.SetSpeed;
+import org.usfirst.frc.team4753.robot.commands.StackTote;
+import org.usfirst.frc.team4753.robot.commands.SystemsCheck;
+import org.usfirst.frc.team4753.robot.commands.ToggleCompressor;
+
+import edu.wpi.first.wpilibj.command.Command;
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -32,6 +44,7 @@ public class RobotMap {
 	public static int clamped = -1;
 	public static int lifted = 1;
 	public static int STACK = 0;
+	
 	public static int arms = 1;
 	public static boolean ejected = false;
 }

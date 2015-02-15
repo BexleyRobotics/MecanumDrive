@@ -81,13 +81,31 @@ public class Pneumatics extends Subsystem
 			lifting.set(DoubleSolenoid.Value.kForward);
 		}
 		
+		/**
+		 * Take compressor off of closed loop and start it manually
+		 * 
+		 * @author Ian Foreman
+		 */
 		public void startCompressor(){
 			compressor.setClosedLoopControl(false);
 			compressor.start();
 		}
 		
+		/**
+		 * Manually stops compressor
+		 * 
+		 * @author Ian Foreman
+		 */
 		public void stopCompressor(){
 			compressor.stop();
+		}
+		
+		/**
+		 * Starts compressor on closed loop control
+		 * 
+		 * @author Ian Foreman
+		 */
+		public void startClosedLoop(){
 			compressor.setClosedLoopControl(true);
 		}
 }

@@ -15,7 +15,8 @@ public class Dashboard extends Subsystem
 {
 	private int numStacked = 0;
 	private Timer time = new Timer();
-	private int compressorToggle = -1;
+	private int compressorToggle = 0;
+	private String compressor = "Compressor State";
 
     public void initDefaultCommand() 
     {
@@ -31,7 +32,7 @@ public class Dashboard extends Subsystem
 		SmartDashboard.putData("Toggle Grab", new Clamping());
 		SmartDashboard.putData("Toggle Arms", new ArmSpinner());
 		SmartDashboard.putData("Toggle Compressor", new ToggleCompressor());
-		SmartDashboard.putBoolean("Compressor State", false);
+		SmartDashboard.putString(compressor, "Auto");
 		time.reset();
 		time.start();
     }
@@ -72,9 +73,23 @@ public class Dashboard extends Subsystem
 		SmartDashboard.putNumber("Speed", speedpercent);
 	}
 	
+	/**
+	 * Toggles the reading on the compressor state
+	 * 
+	 * @author Ian Foreman
+	 */
 	public void compressorState(){
-		compressorToggle *= -1;
-		SmartDashboard.putBoolean("Compressor State", compressorToggle > 0);
+		compressorToggle++;
+		compressorToggle %= 3;
+		if(compressorToggle == 0){
+			SmartDashboard.putString(compressor, "Auto");
+		}
+		else if(compressorToggle == 1){
+			SmartDashboard.putString(compressor, "On");
+		}
+		else{
+			SmartDashboard.putString(compressor, "Off");
+		}
 	}
     
 }

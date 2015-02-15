@@ -5,7 +5,9 @@ import static org.usfirst.frc.team4753.robot.Robot.pneumatics;
 import static org.usfirst.frc.team4753.robot.Robot.dashboard;
 
 /**
+ *Toggles compressor between being on indefinitely, being off, and being on a closed loop
  *
+ *@author Ian Foreman
  */
 public class ToggleCompressor extends Command {
 
@@ -25,12 +27,16 @@ public class ToggleCompressor extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	toggle *= -1;
-    	if(toggle > 0){
+    	toggle++;
+    	toggle %= 3;
+    	if(toggle == 0){
     		pneumatics.startCompressor();
     	}
-    	else{
+    	else if(toggle== 1){
     		pneumatics.stopCompressor();
+    	}
+    	else{
+    		pneumatics.startClosedLoop();
     	}
     	
     	dashboard.compressorState();

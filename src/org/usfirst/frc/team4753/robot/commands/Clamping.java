@@ -32,11 +32,11 @@ public class Clamping extends Command
     	finished = false;
     	if (clamped == -1)
     	{
-    		pneumatics.clamp();
+//    		pneumatics.clamp();
     	}
     	else
     	{
-    		pneumatics.unclamp();
+//    		pneumatics.unclamp();
     	}
     	clamped = clamped *-1;
     	finished = true;

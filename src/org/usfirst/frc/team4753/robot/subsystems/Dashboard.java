@@ -32,7 +32,7 @@ public class Dashboard extends Subsystem
 		SmartDashboard.putBoolean("Lifted", (lifted == -1));
 		SmartDashboard.putBoolean("Ejector", ejected);
 		SmartDashboard.putData("Toggle Lift", new Lifting());
-		SmartDashboard.putData("Toggle Grab", new Clamping());
+		//SmartDashboard.putData("Toggle Grab", new Clamping());
 		SmartDashboard.putData("Toggle Arms", new ArmSpinner());
 		SmartDashboard.putData("Toggle Compressor", new ToggleCompressor());
 		SmartDashboard.putString(compressor, "Auto");
@@ -41,8 +41,6 @@ public class Dashboard extends Subsystem
     }
     /**
      * startTime will make a timer so that we know how long we have in the match.
-     * 
-     * 
      * 
      */
     public void startTime()

@@ -30,9 +30,9 @@ public class Pneumatics extends Subsystem
 	private Compressor compressor;
 	
 	public Pneumatics(){
-		clamping = new DoubleSolenoid(CLAMPING_FORWARD,CLAMPING_REVERSE);
-		lifting = new DoubleSolenoid(LIFTING_FORWARD,LIFTING_REVERSE);
-		pushing = new DoubleSolenoid(PUSHING_FORWARD, PUSHING_REVERSE);
+//		clamping = new DoubleSolenoid(CLAMPING_CLAMP,CLAMPING_UNCLAMP);
+		lifting = new DoubleSolenoid(LIFTING_UP,LIFTING_DOWN);
+		pushing = new DoubleSolenoid(PUSHING_EJECT, PUSHING_RETRACT);
 		compressor = new Compressor();
 		compressor.setClosedLoopControl(true);
 		
@@ -43,42 +43,45 @@ public class Pneumatics extends Subsystem
 
 
 		/**
-		 * Activates grabbing solenoid so that it grabs tote
+		 * Extends the ejector bar
 		 * 
 		 */
 		public void eject() {
-			pushing.set(DoubleSolenoid.Value.kReverse);
-		}
-
-		public void retract() {
 			pushing.set(DoubleSolenoid.Value.kForward);
 		}
-		
-		public void clamp() {
-			clamping.set(DoubleSolenoid.Value.kForward);
+
+		/**
+		 * Retracts the ejector bar
+		 */
+		public void retract() {
+			pushing.set(DoubleSolenoid.Value.kReverse);
 		}
+		
+//		public void clamp() {
+//			clamping.set(DoubleSolenoid.Value.kForward);
+//		}
 
 		/**
 		 * Retracts pistons so that tote rises false = raise true = lower
 		 */
 		public void raise() {
-			lifting.set(DoubleSolenoid.Value.kReverse);
+			lifting.set(DoubleSolenoid.Value.kForward);
 		}
 
 		/**
 		 * Releases pistons so that tote is released
 		 * 
 		 */
-		public void unclamp() {
-			clamping.set(DoubleSolenoid.Value.kForward);
-		}
+//		public void unclamp() {
+//			clamping.set(DoubleSolenoid.Value.kReverse);
+//		}
 
 		/**
 		 * activates pistons so that tote is lowered
 		 * 
 		 */
 		public void lower() {
-			lifting.set(DoubleSolenoid.Value.kForward);
+			lifting.set(DoubleSolenoid.Value.kReverse);
 		}
 		
 		/**

@@ -4,15 +4,27 @@ import edu.wpi.first.wpilibj.command.Command;
 
 import static org.usfirst.frc.team4753.robot.Robot.arms;
 
+/**
+ * Spins arms inwards while held.
+ * 
+ * @author Ian Foreman
+ * @author Nick LeBlanc
+ *
+ */
 public class PullToteIn extends Command {
+	
+	public PullToteIn() {
+		requires(arms);
+	}
+	
 	@Override
 	protected void initialize() {
-		requires(arms);
+		arms.forward();
 	}
 
 	@Override
 	protected void execute() {
-		arms.forward();
+		
 	}
 
 	@Override

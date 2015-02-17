@@ -47,8 +47,8 @@ public class Robot extends IterativeRobot {
 		dashboard = new Dashboard();
 		oi = new OI();
 		dashboard.startTime();
-		pneumatics.unclamp();
-		pneumatics.raise();
+//		pneumatics.unclamp();
+		pneumatics.lower();
 		autonomousCommand = new Autonomous();
 		testCommand = new SystemsCheck();
 	}

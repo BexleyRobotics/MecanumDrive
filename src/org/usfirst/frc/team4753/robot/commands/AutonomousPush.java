@@ -33,7 +33,7 @@ public class AutonomousPush extends Command {
     	time.reset();
     	time.start();
     	arms.backward(-1.0);
-    	pneumatics.unclamp();
+//    	pneumatics.unclamp();
    		pneumatics.eject();
     		
     }
@@ -49,7 +49,7 @@ public class AutonomousPush extends Command {
     {
     	arms.stop();
     	pneumatics.retract();
-    	pneumatics.clamp();
+//    	pneumatics.clamp();
     }
 
     // Called when another command which requires one or more of the same

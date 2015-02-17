@@ -22,12 +22,12 @@ public class RobotMap {
 	//public static final int MIDDLE_ARM_MOTOR = 4;
 	
 	// Pneumatics indexes
-	public static final int CLAMPING_FORWARD = 4;
-	public static final int CLAMPING_REVERSE = 5;
-	public static final int LIFTING_FORWARD = 2;
-	public static final int LIFTING_REVERSE = 3;
-	public static final int PUSHING_FORWARD = 0;
-	public static final int PUSHING_REVERSE = 1;
+	public static final int CLAMPING_CLAMP = 4;
+	public static final int CLAMPING_UNCLAMP = 5;
+	public static final int LIFTING_UP = 2;
+	public static final int LIFTING_DOWN = 3;
+	public static final int PUSHING_EJECT = 0;
+	public static final int PUSHING_RETRACT = 1;
 	
 	public static int clamped = -1;
 	public static int lifted = 1;

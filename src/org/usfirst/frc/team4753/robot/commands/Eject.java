@@ -16,7 +16,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class Eject extends Command {
 	double speed;
-	private boolean finished;
+	private boolean finished = false;
     public Eject() 
     {
     	requires (pneumatics);
@@ -28,16 +28,16 @@ public class Eject extends Command {
     // Called just before this Command runs the first time
     protected void initialize() 
     {
-    	finished = false;
-    	
+    	pneumatics.lower();
+    	pneumatics.eject();
+    	ejected = true;	
     	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-    	pneumatics.eject();
-    	ejected = true;
+    	
     	speed = -(oi.getY());
     	arms.backward(speed);
     	finished = true;

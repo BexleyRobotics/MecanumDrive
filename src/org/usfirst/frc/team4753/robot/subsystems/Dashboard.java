@@ -14,7 +14,7 @@ public class Dashboard extends Subsystem
 {
 	private int numStacked = 0;
 	private Timer time = new Timer();
-	private int compressorToggle = 0;
+	private int compressorToggle = -1; // Change to 0 for three stage toggle
 	private String compressor = "Compressor State";
 
     public void initDefaultCommand() 
@@ -62,16 +62,24 @@ public class Dashboard extends Subsystem
 	 * @author Ian Foreman
 	 */
 	public void compressorState(){
-		compressorToggle++;
-		compressorToggle %= 3;
-		if(compressorToggle == 0){
-			SmartDashboard.putString(compressor, "Auto");
-		}
-		else if(compressorToggle == 1){
-			SmartDashboard.putString(compressor, "On");
+//		compressorToggle++;
+//		compressorToggle %= 3;
+//		if(compressorToggle == 0){
+//			SmartDashboard.putString(compressor, "Auto");
+//		}
+//		else if(compressorToggle == 1){
+//			SmartDashboard.putString(compressor, "On");
+//		}
+//		else{
+//			SmartDashboard.putString(compressor, "Off");
+//		}
+		
+		compressorToggle *= -1;
+		if(compressorToggle > 0){
+			SmartDashboard.putString(compressor, "Off");
 		}
 		else{
-			SmartDashboard.putString(compressor, "Off");
+			SmartDashboard.putString(compressor, "Auto");
 		}
 	}
 	

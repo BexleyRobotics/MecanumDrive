@@ -27,12 +27,20 @@ public class ToggleCompressor extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	toggle++;
-    	toggle %= 3;
-    	if(toggle == 0){
-    		pneumatics.startCompressor();
-    	}
-    	else if(toggle== 1){
+//    	toggle++;
+//    	toggle %= 3;
+//    	if(toggle == 0){
+//    		pneumatics.stopCompressor();
+//    	}
+//    	else if(toggle== 1){
+//    		pneumatics.startCompressor();
+//    	}
+//    	else{
+//    		pneumatics.startClosedLoop();
+//    	}
+    	
+    	toggle *= -1;
+    	if(toggle > 0){
     		pneumatics.stopCompressor();
     	}
     	else{

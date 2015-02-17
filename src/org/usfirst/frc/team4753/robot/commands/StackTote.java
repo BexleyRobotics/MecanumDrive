@@ -22,7 +22,7 @@ public class StackTote extends Command
     // Called just before this Command runs the first time
     protected void initialize() 
     {
-    	pneumatics.clamp();
+//    	pneumatics.clamp();
     	pneumatics.raise();
     	finish = false;
     }
@@ -30,11 +30,11 @@ public class StackTote extends Command
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-    	pneumatics.unclamp();
+//    	pneumatics.unclamp();
     	setTimeout(.25);
     	pneumatics.lower();
     	setTimeout(.25);
-    	pneumatics.clamp();
+//    	pneumatics.clamp();
     	setTimeout(.25);
     	pneumatics.raise();
     	RobotMap.STACK = RobotMap.STACK + 1;
@@ -49,7 +49,7 @@ public class StackTote extends Command
     // Called once after isFinished returns true
     protected void end() 
     {
-    	pneumatics.clamp();
+//    	pneumatics.clamp();
     	pneumatics.raise();
     }
 

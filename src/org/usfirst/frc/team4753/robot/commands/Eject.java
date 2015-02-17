@@ -5,8 +5,6 @@ import static org.usfirst.frc.team4753.robot.Robot.arms;
 import static org.usfirst.frc.team4753.robot.Robot.oi;
 import static org.usfirst.frc.team4753.robot.RobotMap.*;
 
-import org.usfirst.frc.team4753.robot.RobotMap;
-
 import edu.wpi.first.wpilibj.command.Command;
 
 
@@ -60,6 +58,7 @@ public class Eject extends Command {
     	pneumatics.retract();
     	ejected = false;
     	arms.stop();
+    	STACK = 0;
     	finished = false;
     }
 

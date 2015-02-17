@@ -2,7 +2,6 @@ package org.usfirst.frc.team4753.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
-import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import static org.usfirst.frc.team4753.robot.RobotMap.*;
 

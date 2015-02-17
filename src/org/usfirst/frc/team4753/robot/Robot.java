@@ -30,7 +30,6 @@ public class Robot extends IterativeRobot {
 	public static Dashboard dashboard;
 	private Command autonomousCommand;
 	private Command testCommand;
-	int numStacked = 0;
 
 	/**
 	 * This function is run when the robot is first started up and should be

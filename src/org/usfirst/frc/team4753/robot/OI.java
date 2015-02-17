@@ -27,11 +27,6 @@ public class OI
 		button1.whileHeld(new PullToteIn());
 		button2.whenPressed(new Lifting());
 		button3.whenPressed(new Eject());
-		
-		button1.whenPressed(new SetSpeed());
-		button2.whileHeld(new PullToteIn());
-		button4.whenPressed(new StackTote());
-		button6.whileHeld(new Eject());
 		button7.whenPressed(new ToggleCompressor());
 		button8.whenPressed(new SetSpeed());
 	}

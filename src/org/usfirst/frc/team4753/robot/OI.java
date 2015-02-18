@@ -17,7 +17,7 @@ public class OI
 	private Button button1 = new JoystickButton(stick, 1);
 	private Button button2 = new JoystickButton(stick, 2);
 	private Button button3 = new JoystickButton(stick, 3);
-	private Button button4 = new JoystickButton(stick, 3);
+	private Button button4 = new JoystickButton(stick, 4);
 	private Button button6 = new JoystickButton(stick, 6);
 	private Button button7 = new JoystickButton(stick, 7);
 	private Button button8 = new JoystickButton(stick, 8);

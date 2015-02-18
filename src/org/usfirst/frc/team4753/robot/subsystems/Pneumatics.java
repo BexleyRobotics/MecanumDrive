@@ -99,6 +99,7 @@ public class Pneumatics extends Subsystem
 		 * @author Ian Foreman
 		 */
 		public void stopCompressor(){
+			compressor.setClosedLoopControl(false);
 			compressor.stop();
 		}
 		
@@ -108,6 +109,7 @@ public class Pneumatics extends Subsystem
 		 * @author Ian Foreman
 		 */
 		public void startClosedLoop(){
+			compressor.stop();
 			compressor.setClosedLoopControl(true);
 		}
 }

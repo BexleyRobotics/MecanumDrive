@@ -42,12 +42,11 @@ public class Robot extends IterativeRobot {
 		arms = new WheelArm();
 		pneumatics = new Pneumatics();
 		comms = new Communications();
-		
 		dashboard = new Dashboard();
 		oi = new OI();
 		dashboard.startTime();
 //		pneumatics.unclamp();
-		pneumatics.lower();
+		pneumatics.raise();
 		autonomousCommand = new Autonomous();
 		testCommand = new SystemsCheck();
 	}

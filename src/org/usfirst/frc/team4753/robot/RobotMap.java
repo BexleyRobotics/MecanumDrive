@@ -25,10 +25,10 @@ public class RobotMap {
 	// Pneumatics indexes
 	public static final int CLAMPING_CLAMP = 4;
 	public static final int CLAMPING_UNCLAMP = 5;
-	public static final int LIFTING_UP = 2;
-	public static final int LIFTING_DOWN = 3;
-	public static final int PUSHING_EJECT = 0;
-	public static final int PUSHING_RETRACT = 1;
+	public static final int LIFTING_UP = 3;
+	public static final int LIFTING_DOWN = 2;
+	public static final int PUSHING_EJECT = 1;
+	public static final int PUSHING_RETRACT = 0;
 	
 	public static int clamped = -1;
 	public static int lifted = 1;

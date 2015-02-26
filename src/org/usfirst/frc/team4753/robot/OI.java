@@ -24,10 +24,16 @@ public class OI
 	
 	public OI() 
 	{
-		button1.whileHeld(new PullToteIn());
+		button1.whenPressed(new SpinArmsIn());
+		button1.whenReleased(new StopArms());
+		
 		button2.whenPressed(new Lifting());
-		button3.whenPressed(new Eject());
+		
+		button3.whileHeld(new Eject());
+		button3.whenReleased(new Retract());
+		
 		button7.whenPressed(new ToggleCompressor());
+		
 		button8.whenPressed(new SetSpeed());
 	}
 

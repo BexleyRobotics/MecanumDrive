@@ -31,7 +31,7 @@ public class RobotMap {
 	public static final int PUSHING_RETRACT = 1;
 	
 	public static int clamped = -1;
-	public static int lifted = 1;
+	public static boolean raised = true;
 	public static int STACK = 0;
 	
 	public static int arms = 1;

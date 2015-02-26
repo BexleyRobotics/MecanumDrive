@@ -11,31 +11,33 @@ import static org.usfirst.frc.team4753.robot.Robot.arms;
  * @author Nick LeBlanc
  *
  */
-public class PullToteIn extends Command {
+public class SpinArmsIn extends Command {
 	
-	public PullToteIn() {
+	private boolean finished = false;
+	
+	public SpinArmsIn() {
 		requires(arms);
 	}
 	
 	@Override
 	protected void initialize() {
-		arms.forward();
-	}
-
-	@Override
-	protected void execute() {
 		
 	}
 
 	@Override
+	protected void execute() {
+		arms.forward();
+	}
+
+	@Override
 	protected boolean isFinished() {
-		return false;
+		return finished;
 	}
 
 	@Override
 	protected void end() 
 	{
-		arms.stop();
+		finished = false;
 	}
 
 	@Override

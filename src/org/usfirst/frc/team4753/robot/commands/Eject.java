@@ -28,15 +28,22 @@ public class Eject extends Command {
     // Called just before this Command runs the first time
     protected void initialize() 
     {
-    	pneumatics.lower();
-    	pneumatics.eject();
-    	ejected = true;	
+    		
     	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
+    	if(!ejected){
+    		if(raised){
+    			pneumatics.lower();
+    			raised = false;
+    		}
+        	pneumatics.eject();
+        	ejected = true;
+        	
+    	}
     	
     	speed = -(oi.getY());
     	arms.backward(speed);
@@ -54,11 +61,6 @@ public class Eject extends Command {
     // Called once after isFinished returns true
     protected void end() 
     {
-    	
-    	pneumatics.retract();
-    	ejected = false;
-    	arms.stop();
-    	STACK = 0;
     	finished = false;
     }
 

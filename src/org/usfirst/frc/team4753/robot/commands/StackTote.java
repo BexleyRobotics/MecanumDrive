@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class StackTote extends Command 
 {
-	private boolean finish;
+	private boolean finish = false;
 
     public StackTote() 
     {
@@ -23,21 +23,25 @@ public class StackTote extends Command
     protected void initialize() 
     {
 //    	pneumatics.clamp();
-    	pneumatics.raise();
-    	finish = false;
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
 //    	pneumatics.unclamp();
-    	setTimeout(.25);
-    	pneumatics.lower();
-    	setTimeout(.25);
+//    	setTimeout(.25);
+    	
+    	if(raised){
+    		pneumatics.lower();
+    		setTimeout(.25);
+    	}
 //    	pneumatics.clamp();
-    	setTimeout(.25);
+//    	setTimeout(.25);
     	pneumatics.raise();
-    	RobotMap.STACK = RobotMap.STACK + 1;
+    	STACK++;
+    	raised = true;
+    	finish = true;
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -51,6 +55,7 @@ public class StackTote extends Command
     {
 //    	pneumatics.clamp();
     	pneumatics.raise();
+    	finish = false;
     }
 
     // Called when another command which requires one or more of the same

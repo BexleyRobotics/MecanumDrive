@@ -23,7 +23,7 @@ public class SystemsCheck extends CommandGroup {
     	setTimeout(2);
     	addSequential(lifting);
     	setTimeout(2);
-    	addSequential(new PullToteIn());
+    	addSequential(new SpinArmsIn());
     	setTimeout(2);
     	addSequential(new Eject());
     	setTimeout(2);	

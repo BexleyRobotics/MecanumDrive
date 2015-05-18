@@ -14,7 +14,8 @@ public class WheelArm extends Subsystem {
 	// Put methods for controlling this subsystem
 	// here. Call these from Commands.
 	private SpeedController left, right;
-	private double reverseMax = 1.0; 
+	private double reverseMax = -1.0; 
+	private int speedModifier = -1;
 
 	public WheelArm() {
 		left = new Talon(LEFT_ARM_MOTOR);
@@ -28,15 +29,21 @@ public class WheelArm extends Subsystem {
 	}
 
 	public void forward() {
-		left.set(1);
+		left.set(1 * speedModifier);
 		//middle.set(1);
-		right.set(1);
+		right.set(1 * speedModifier);
 	}
 
 	public void backward(double speed) {
-		left.set(speed * reverseMax);
+		
+		speed = Math.abs(speed);
+		if(speed < .5){
+			speed = .5;
+		}
+		
+		left.set(speed * reverseMax * speedModifier);
 		//middle.set(-1);
-		right.set(speed * reverseMax);
+		right.set(speed * reverseMax* speedModifier);
 	}
 
 	public void stop() {
@@ -46,6 +53,6 @@ public class WheelArm extends Subsystem {
 	}
 	
 	public void setReverseMax(double limit){
-		reverseMax = limit;
+		//reverseMax = limit *-1;
 	}
 }

@@ -58,8 +58,8 @@ public class DriveTrain extends Subsystem {
 	public void drive(double y, double x) {
 
 		double left, right;
-		left = y - x;
-		right = y + x;
+		left = -y - x;
+		right = -y + x;
 		drive.setLeftRightMotorOutputs(left, right);
 
 	}

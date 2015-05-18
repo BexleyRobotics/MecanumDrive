@@ -23,7 +23,7 @@ public class Pneumatics extends Subsystem
     }
     
     
-	private DoubleSolenoid clamping;
+	//private DoubleSolenoid clamping;
 	private DoubleSolenoid lifting;
 	private DoubleSolenoid pushing;
 	private Compressor compressor;

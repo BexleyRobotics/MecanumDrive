@@ -21,7 +21,6 @@ public class SetSpeed extends Command {
 	 * motors what percentage of power they are to use, down to 5% power
 	 * requires drivetrain, joystick
 	 * 
-	 * @param joy
 	 * @author nathan brownstein
 	 */
 	public SetSpeed() {
@@ -29,6 +28,7 @@ public class SetSpeed extends Command {
 		// Use requires() here to declare subsystem dependencies
 		// eg. requires(chassis);
 		requires(drivetrain);
+		requires(arms);
 	}
 
 	// Called just before this Command runs the first time

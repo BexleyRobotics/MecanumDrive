@@ -35,15 +35,8 @@ public class Eject extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-    	if(!ejected){
-    		if(raised){
-    			pneumatics.lower();
-    			raised = false;
-    		}
-        	pneumatics.eject();
-        	ejected = true;
-        	
-    	}
+    	pneumatics.lower();
+    	pneumatics.eject();
     	
     	speed = -(oi.getY());
     	arms.backward(speed);

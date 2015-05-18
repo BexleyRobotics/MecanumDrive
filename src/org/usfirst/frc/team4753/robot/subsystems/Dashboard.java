@@ -1,6 +1,6 @@
 package org.usfirst.frc.team4753.robot.subsystems;
 
-import org.usfirst.frc.team4753.robot.commands.*;
+//import org.usfirst.frc.team4753.robot.commands.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Timer;
@@ -12,7 +12,7 @@ import static org.usfirst.frc.team4753.robot.RobotMap.*;
  */
 public class Dashboard extends Subsystem 
 {
-	private int numStacked = 0;
+	//private int numStacked = 0;
 	private Timer time = new Timer();
 	private int compressorToggle = -1; // Change to 0 for three stage toggle
 	private String compressor = "Compressor State";
@@ -28,14 +28,17 @@ public class Dashboard extends Subsystem
 		SmartDashboard.putNumber("Speed", 0.0);
 		SmartDashboard.putNumber("Time", 0.0);
 		SmartDashboard.putNumber("ArmSpeed", 0.0);
-		SmartDashboard.putBoolean("Clamped", (clamped == -1));
+		//SmartDashboard.putBoolean("Clamped", (clamped == -1));
 		SmartDashboard.putBoolean("Lifted", raised);
 		SmartDashboard.putBoolean("Ejector", ejected);
-		SmartDashboard.putData("Toggle Lift", new Lifting());
+		//SmartDashboard.putData("Toggle Lift", new Lifting());
 		//SmartDashboard.putData("Toggle Grab", new Clamping());
-		SmartDashboard.putData("Toggle Arms", new ArmSpinner());
-		SmartDashboard.putData("Toggle Compressor", new ToggleCompressor());
+		//SmartDashboard.putData("Toggle Arms", new ArmSpinner());
+		//SmartDashboard.putData("Toggle Compressor", new ToggleCompressor());
+		//SmartDashboard.putData("Systems Check", new SystemsCheck());
 		SmartDashboard.putString(compressor, "Auto");
+		SmartDashboard.putNumber("Autonomous Power", 0.5);
+		SmartDashboard.putNumber("Autonomous Duration", 1.5);
 		time.reset();
 		time.start();
     }
@@ -54,6 +57,11 @@ public class Dashboard extends Subsystem
 	public void speedometer(double speedpercent)
 	{
 		SmartDashboard.putNumber("Speed", speedpercent);
+	}
+	
+	public void autoSpeed(double speed, double duration){
+		SmartDashboard.putNumber("Autonomous Power", speed);
+		SmartDashboard.putNumber("Autonomous Duration", duration);
 	}
 	
 	/**

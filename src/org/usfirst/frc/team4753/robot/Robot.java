@@ -39,6 +39,7 @@ public class Robot extends IterativeRobot {
 
 		// instantiate the command used for the autonomous period
 		drivetrain = new DriveTrain();
+		drivetrain.setMaxOutput(1.0);
 		arms = new WheelArm();
 		pneumatics = new Pneumatics();
 		comms = new Communications();
@@ -48,7 +49,7 @@ public class Robot extends IterativeRobot {
 //		pneumatics.unclamp();
 		pneumatics.raise();
 		autonomousCommand = new Autonomous();
-		testCommand = new SystemsCheck();
+		//testCommand = new SystemsCheck();
 	}
 
 	public void disabledPeriodic() {
@@ -103,6 +104,6 @@ public class Robot extends IterativeRobot {
 	}
 	
     public void testInit(){
-    	testCommand.start();
+    //	testCommand.start();
     }
 }

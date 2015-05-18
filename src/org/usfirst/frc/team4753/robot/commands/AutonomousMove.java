@@ -10,6 +10,8 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  *@author Nathan Brownstein
  */
+
+import static org.usfirst.frc.team4753.robot.Robot.drivetrain;
 public class AutonomousMove extends Command {
 	
 	private Timer time;
@@ -21,22 +23,24 @@ public class AutonomousMove extends Command {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires(drivetrain);
+    	time = new Timer();
     	timetodrive = timing;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() 
     {
+    	time.reset();
+    	time.start();
     	
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-    	time.reset();
-    	time.start();
-    	drivetrain.setMaxOutput(.25);
-    	drivetrain.drive(1, 0);
+    	
+    	drivetrain.setMaxOutput(1.0);
+    	drivetrain.drive(-0.5, 0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
